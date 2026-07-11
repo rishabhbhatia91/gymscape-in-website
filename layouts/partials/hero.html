@@ -1,0 +1,25 @@
+<section class="hero" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">A Bhatia Sports Company · Est. {{ .Site.Params.legacyEst }}</p>
+    <h1 class="hero-title">Equipping India&rsquo;s sports, fitness &amp; play spaces.</h1>
+    <p class="hero-sub">Sports courts and equipment, gym fit-outs, and playgrounds - sourced, supplied and installed by one team, since 1982.</p>
+
+    <div class="hero-pills">
+      <a href="#sports" class="pill"><span class="icon">{{ partial "icon.html" "sports" }}</span>Sports</a>
+      <a href="#fitness" class="pill"><span class="icon">{{ partial "icon.html" "fitness" }}</span>Fitness</a>
+      <a href="#playground" class="pill"><span class="icon">{{ partial "icon.html" "playground" }}</span>Playground</a>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ "Hi Gymscape, I'd like to know more about your products." | urlquery }}" target="_blank" rel="noopener">
+        <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+        Chat on WhatsApp
+      </a>
+      <a class="btn btn-outline btn-lg" href="#catalogue">
+        Browse the catalogue
+        <span class="icon">{{ partial "icon.html" "arrow" }}</span>
+      </a>
+    </div>
+  </div>
+</section>

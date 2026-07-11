@@ -1,0 +1,22 @@
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="{{ "images/gymscape-logo-trimmed.jpg" | relURL }}" alt="{{ .Site.Params.brandName }}" class="footer-logo">
+      <p>A Bhatia Sports company &middot; Est. {{ .Site.Params.legacyEst }}</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#sports">Sports</a>
+      <a href="#fitness">Fitness</a>
+      <a href="#playground">Playground</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer-contact">
+      <a href="https://wa.me/{{ .Site.Params.whatsappNumber }}" target="_blank" rel="noopener">{{ .Site.Params.phoneDisplay }}</a>
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <p>&copy; {{ now.Format "2006" }} Gymscape / Bhatia Sports. All rights reserved.</p>
+  </div>
+</footer>

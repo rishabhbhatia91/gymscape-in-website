@@ -1,0 +1,51 @@
+<section class="contact" id="contact">
+  <div class="wrap contact-inner">
+    <div class="contact-copy">
+      <p class="section-kicker section-kicker--light">Get in touch</p>
+      <h2 class="section-title section-title--light">Tell us what you&rsquo;re building.</h2>
+      <p class="contact-sub">Share your requirement - a court, a gym, or a playground - and we&rsquo;ll get back with options and pricing. Fastest way to reach us is WhatsApp.</p>
+
+      <div class="contact-methods">
+        <a class="contact-method" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ "Hi Gymscape, I'd like to know more about your products." | urlquery }}" target="_blank" rel="noopener">
+          <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+          <span>
+            <strong>WhatsApp</strong>
+            <small>{{ .Site.Params.phoneDisplay }}</small>
+          </span>
+        </a>
+        <a class="contact-method" href="mailto:{{ .Site.Params.email }}?subject={{ "Enquiry from gymscape.in" | urlquery }}">
+          <span class="icon">{{ partial "icon.html" "mail" }}</span>
+          <span>
+            <strong>Email</strong>
+            <small>{{ .Site.Params.email }}</small>
+          </span>
+        </a>
+        <a class="contact-method" href="tel:+{{ .Site.Params.phoneE164 }}">
+          <span class="icon">{{ partial "icon.html" "phone" }}</span>
+          <span>
+            <strong>Call</strong>
+            <small>{{ .Site.Params.phoneDisplay }}</small>
+          </span>
+        </a>
+        {{ range .Site.Params.outlets }}
+        <a class="contact-method" href="{{ .mapUrl }}" target="_blank" rel="noopener">
+          <span class="icon">{{ partial "icon.html" "pin" }}</span>
+          <span>
+            <strong>{{ .name }}</strong>
+            <small>{{ $.Site.Params.city }} &middot; get directions</small>
+          </span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="contact-cta-card">
+      <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+      <h3>Fastest response on WhatsApp</h3>
+      <p>Send a photo of your space or a copy of your requirement - we usually reply within the day.</p>
+      <a class="btn btn-primary btn-lg btn-block" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ "Hi Gymscape, I'd like to know more about your products." | urlquery }}" target="_blank" rel="noopener">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>

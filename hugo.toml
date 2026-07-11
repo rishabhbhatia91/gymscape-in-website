@@ -1,0 +1,46 @@
+baseURL = 'https://gymscape.in/'
+languageCode = 'en-in'
+title = 'Gymscape | Sports, Fitness & Playground Equipment in Lucknow'
+theme = []
+enableRobotsTXT = true
+summarylength = 20
+disableKinds = ['taxonomy', 'term']
+
+[pagination]
+  pagerSize = 10
+
+[sitemap]
+  changefreq = 'weekly'
+  priority = 0.8
+  filename = 'sitemap.xml'
+
+[params]
+  description = "Gymscape by Bhatia Sports (Est. 1982), Lucknow - pickleball & sports court construction contractors, commercial gym setup, playground swings manufacturers & installers, and treadmill sellers across India."
+  keywords = "pickleball court contractors, pickleball court construction, playground swings manufacturers, playground swings installers, commercial gym setup, treadmill sellers, treadmill dealers, billiard table, snooker table, sports flooring contractors, sports equipment dealer Lucknow, gym equipment dealer Lucknow, playground equipment manufacturer India"
+  brandName = "Gymscape"
+  legacyName = "Bhatia Sports"
+  legacyEst = "1982"
+  tagline = "Sports. Fitness. Playgrounds. Built to last."
+  phoneDisplay = "+91 96964 22319"
+  phoneE164 = "919696422319"
+  whatsappNumber = "919696422319"
+  email = "thefitkitshop@gmail.com"
+  ogImage = "images/og-cover.jpg"
+  city = "Lucknow"
+  region = "Uttar Pradesh"
+
+  [[params.outlets]]
+    name = "Lalbagh Outlet"
+    mapUrl = "https://maps.app.goo.gl/NFVDMAn8kQ5UgGbf8"
+
+  [[params.outlets]]
+    name = "Outlet 2"
+    mapUrl = "https://maps.app.goo.gl/NnBMxnhh2A6bJhFu6"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[minify]
+  minifyOutput = true

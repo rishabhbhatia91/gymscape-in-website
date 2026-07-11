@@ -1,0 +1,10 @@
+{{ define "main" }}
+{{ partial "hero.html" . }}
+{{ partial "about.html" . }}
+{{ partial "category-nav.html" . }}
+{{ range .Site.Data.categories.categories }}
+{{ partial "category-section.html" . }}
+{{ end }}
+{{ partial "features.html" . }}
+{{ partial "contact.html" . }}
+{{ end }}

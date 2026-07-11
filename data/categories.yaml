@@ -1,0 +1,139 @@
+categories:
+  - key: sports
+    name: "Sports"
+    short: "Sports"
+    icon: "sports"
+    tagline: "Courts, poles, goals and match-ready gear for every game."
+    blurb: "From Olympic-spec basketball poles to full synthetic court construction, we equip schools, clubs, societies and institutions for competitive and recreational play."
+    subcategories:
+      - key: sports-equipment
+        name: "Sports Equipment"
+        icon: "ball"
+        blurb: "Poles, goals, tables and match gear across every major sport."
+        items:
+          - "Basketball poles - fixed & movable, height-adjustable"
+          - "Badminton & lawn tennis poles"
+          - "Volleyball poles - fixed, telescopic & training"
+          - "Football, hockey, handball & futsal goal posts"
+          - "Table tennis tables & accessories"
+          - "Billiards, snooker, pool, foosball & air hockey tables"
+          - "Gymnastic equipment - vaulting tables, beams, rings"
+          - "Archery sets & target boss"
+          - "Carrom boards & chess boards"
+          - "Sports nets - every discipline"
+          - "Sports mats - crash, judo & pole vault"
+      - key: sports-flooring
+        name: "Sports Flooring"
+        icon: "tile"
+        blurb: "Pickleball court construction contractors, plus ITF-approved cushioned synthetic court systems and interlocking tile flooring for every sport - built for daily play in any weather."
+        courtSystems:
+          - sport: "Pickleball Court"
+            size: "Court 30 × 60 ft · Play area 20 × 44 ft"
+            system: "Cushioned acrylic coated system - India's fastest-growing sport, built new or converted from an existing tennis/badminton court"
+          - sport: "Basketball Court"
+            size: "Court 104 × 62 ft · Play area 49 × 92 ft"
+            system: "2-layer acrylic surfacer + 4-layer rubber cushion + 2-layer weatherproof paint, standard line marking"
+          - sport: "Lawn Tennis Court"
+            size: "Court 120 × 60 ft · Play area 78 × 36 ft"
+            system: "ITF-approved cushioned 8-layer acrylic synthetic system"
+          - sport: "Badminton Court"
+            size: "Court 50 × 25 ft · Play area 44 × 20 ft"
+            system: "Cushioned acrylic system - or maple wood / 4.5mm PVC vinyl alternatives"
+          - sport: "Volleyball Court"
+            size: "Court 78 × 49 ft · Play area 30 × 60 ft"
+            system: "Cushioned 8-layer acrylic synthetic system"
+        items:
+          - "PP interlocking sports tiles - multiple colours & designs"
+          - "Rubber sports flooring tiles"
+          - "Custom court colours & 5 line-marking design options"
+      - key: sports-infrastructure
+        name: "Sports Infrastructure"
+        icon: "court"
+        blurb: "End-to-end court construction and fit-out - from base layer to line marking."
+        items:
+          - "Pickleball court construction - India's fastest-growing sport"
+          - "Basketball court construction - 8-layer synthetic"
+          - "Lawn tennis court construction"
+          - "Badminton & volleyball court construction"
+          - "Goal post & pole installation"
+          - "Spectator shelters & seating"
+
+  - key: fitness
+    name: "Fitness Equipment"
+    short: "Fitness"
+    icon: "fitness"
+    tagline: "Commercial-grade strength and home fitness gear that lasts."
+    blurb: "We fit out commercial gyms end-to-end and equip home setups with the same durable machines, weights and flooring."
+    subcategories:
+      - key: commercial-gym-setup
+        name: "Commercial Gym Setup"
+        icon: "dumbbell-rack"
+        blurb: "Complete commercial gym setup - indoor & outdoor fit-outs for clubs, RWAs, corporates and institutions."
+        items:
+          - "Outdoor / open gym stations"
+          - "Indoor gym equipment"
+          - "Chest press, shoulder press & leg press stations"
+          - "Cross walkers & elliptical trainers"
+          - "Dumbbells - 1 to 50 kg, multiple finishes"
+          - "Gym plates & kettlebells - 2 to 30 kg"
+          - "Olympic rods & bars"
+      - key: domestic-fitness-equipment
+        name: "Domestic Fitness Equipment"
+        icon: "home-dumbbell"
+        blurb: "Treadmill sellers and compact, space-friendly equipment for home gyms and personal fitness."
+        items:
+          - "Treadmills - motorised & manual"
+          - "Home dumbbell & plate sets"
+          - "Air bikes, air walkers & cross walkers"
+          - "Vinyl dumbbells & kettlebells"
+          - "Foldable multi-purpose exercise mats"
+      - key: gym-flooring
+        name: "Gym Flooring"
+        icon: "tile"
+        blurb: "Shock-absorbing rubber flooring for home and commercial gyms."
+        items:
+          - "Rubber gym flooring tiles - 10/15/20/25 mm"
+          - "PVC vinyl gym flooring"
+
+  - key: playground
+    name: "Playground Equipment"
+    short: "Playground"
+    icon: "playground"
+    tagline: "Safe, colourful play and outdoor-fitness infrastructure for every space."
+    blurb: "Multi-play stations, swings, benches and safety flooring for parks, schools, societies and public spaces."
+    subcategories:
+      - key: multi-play-stations
+        name: "Multi-Play Stations"
+        icon: "play-station"
+        blurb: "Combination play units and outdoor fitness stations for kids and adults alike."
+        items:
+          - "Multi-play combination units"
+          - "Outdoor fitness stations - air walker, cross walker, rower"
+          - "Monkey bars & bridge ladders"
+          - "Wall bars & parallel bars"
+          - "Twisters, steppers & surf boards"
+          - "Kids play area sets"
+      - key: swings
+        name: "Playground Swings"
+        icon: "swing"
+        blurb: "Playground swing manufacturers and installers - single, multi-seat and sheltered swings for public and residential play areas."
+        items:
+          - "Air swingers"
+          - "Multi-seater sheltered swings"
+          - "Standard park swings"
+      - key: playground-flooring
+        name: "Playground Flooring"
+        icon: "tile"
+        blurb: "Impact-safe flooring systems that keep play areas safe in every season."
+        items:
+          - "Rubber safety tiles"
+          - "PP interlocking play tiles"
+          - "EPDM soft-fall flooring"
+      - key: garden-benches
+        name: "Garden Benches"
+        icon: "bench"
+        blurb: "Durable seating and shelters for parks, campuses and community spaces."
+        items:
+          - "Sheltered multi-seater benches"
+          - "Park & garden benches"
+          - "Outdoor seating units"

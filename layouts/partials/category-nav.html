@@ -1,0 +1,16 @@
+<section class="cat-nav" id="catalogue">
+  <div class="wrap">
+    <p class="section-kicker">What we supply</p>
+    <h2 class="section-title">Three verticals, one team</h2>
+    <div class="cat-nav-grid">
+      {{ range .Site.Data.categories.categories }}
+      <a href="#{{ .key }}" class="cat-nav-card cat-nav-card--{{ .key }}">
+        <span class="cat-nav-icon">{{ partial "icon.html" .icon }}</span>
+        <h3>{{ .name }}</h3>
+        <p>{{ .tagline }}</p>
+        <span class="cat-nav-link">Explore {{ .short }} <span class="icon">{{ partial "icon.html" "arrow" }}</span></span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>

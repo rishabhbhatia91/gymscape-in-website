@@ -1,0 +1,26 @@
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand" aria-label="{{ .Site.Params.brandName }} home">
+      <img src="{{ "images/gymscape-logo-trimmed.jpg" | relURL }}" alt="{{ .Site.Params.brandName }}" class="brand-logo">
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="#sports">Sports</a>
+      <a href="#fitness">Fitness</a>
+      <a href="#playground">Playground</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary header-wa" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ "Hi Gymscape, I'd like to know more about your products." | urlquery }}" target="_blank" rel="noopener">
+        <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+        <span>WhatsApp</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="icon icon-open">{{ partial "icon.html" "menu" }}</span>
+        <span class="icon icon-close">{{ partial "icon.html" "close" }}</span>
+      </button>
+    </div>
+  </div>
+</header>

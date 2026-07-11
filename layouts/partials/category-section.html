@@ -1,0 +1,49 @@
+{{- $cat := . -}}
+<section class="cat-section cat-section--{{ $cat.key }}" id="{{ $cat.key }}">
+  <div class="wrap">
+    <div class="cat-section-head">
+      <span class="cat-section-icon">{{ partial "icon.html" $cat.icon }}</span>
+      <div>
+        <p class="section-kicker">{{ $cat.short }}</p>
+        <h2 class="section-title">{{ $cat.name }}</h2>
+        <p class="cat-section-blurb">{{ $cat.blurb }}</p>
+      </div>
+    </div>
+
+    <div class="subcat-grid">
+      {{ range $cat.subcategories }}
+      <article class="subcat-card">
+        <div class="subcat-head">
+          <span class="subcat-icon">{{ partial "icon.html" .icon }}</span>
+          <h3>{{ .name }}</h3>
+        </div>
+        <p class="subcat-blurb">{{ .blurb }}</p>
+
+        {{ if .courtSystems }}
+        <div class="court-systems">
+          {{ range .courtSystems }}
+          <div class="court-system">
+            <h4>{{ .sport }}</h4>
+            <p class="court-size">{{ .size }}</p>
+            <p class="court-spec">{{ .system }}</p>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{ if .items }}
+        <ul class="subcat-items">
+          {{ range .items }}
+          <li><span class="icon">{{ partial "icon.html" "check" }}</span><span>{{ . }}</span></li>
+          {{ end }}
+        </ul>
+        {{ end }}
+
+        <a class="subcat-enquire" href="https://wa.me/{{ $.Site.Params.whatsappNumber }}?text={{ printf "Hi Gymscape, I'd like a quote for %s." .name | urlquery }}" target="_blank" rel="noopener">
+          Ask about {{ .name }} <span class="icon">{{ partial "icon.html" "arrow" }}</span>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
