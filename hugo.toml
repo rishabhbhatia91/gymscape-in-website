@@ -34,7 +34,7 @@ disableKinds = ['taxonomy', 'term']
     mapUrl = "https://maps.app.goo.gl/NFVDMAn8kQ5UgGbf8"
 
   [[params.outlets]]
-    name = "Outlet 2"
+    name = "Old Outlet"
     mapUrl = "https://maps.app.goo.gl/NnBMxnhh2A6bJhFu6"
 
 [markup]
