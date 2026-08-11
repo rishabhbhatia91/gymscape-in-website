@@ -39,7 +39,7 @@
         </ul>
         {{ end }}
 
-        <a class="subcat-enquire" href="https://api.whatsapp.com/send/?phone={{ $.Site.Params.whatsappNumber }}&amp;text={{ printf "Hi Gymscape, I'd like to know more about %s." .name | urlquery }}&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">
+        <a class="subcat-enquire" href="https://api.whatsapp.com/send/?phone=919696422319&amp;text={{ printf "Hi Gymscape, I'd like to know more about %s." .name | urlquery }}&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">
           Ask about {{ .name }} <span class="icon">{{ partial "icon.html" "arrow" }}</span>
         </a>
       </article>
