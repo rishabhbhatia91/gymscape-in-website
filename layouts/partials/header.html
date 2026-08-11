@@ -13,7 +13,7 @@
     </nav>
 
     <div class="header-actions">
-      <a class="btn btn-primary header-wa" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ "Hi Gymscape, I'd like to know more about your products." | urlquery }}" target="_blank" rel="noopener">
+      <a class="btn btn-primary header-wa" href="https://api.whatsapp.com/send/?phone=919696422319&amp;text={{ "Hi Gymscape, I'd like to know more about your products." | urlquery }}&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">
         <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
         <span>WhatsApp</span>
       </a>
