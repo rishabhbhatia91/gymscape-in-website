@@ -1,0 +1,118 @@
+<section class="shop-section" id="shop-online">
+  <div class="wrap">
+    <!-- Clean Section Header -->
+    <div class="shop-header">
+      <p class="section-kicker section-kicker--light">Shop &amp; Enquiries</p>
+      <h2 class="section-title section-title--light">Explore Our Categories</h2>
+      <p class="shop-subtitle">From retail sports &amp; fitness gear to heavy outdoor gyms and playgrounds — buy online via Flipkart or consult directly with our manufacturing team on WhatsApp.</p>
+    </div>
+
+    <!-- 1. FIRST PRIORITY: SHOP BY CATEGORY SECTION -->
+    <div class="shop-by-category-block" id="shop-categories-block">
+      <div class="shop-cat-grid">
+        {{ range .Site.Data.products.categories }}
+        <div class="shop-cat-card" data-category="{{ .name }}" role="button" tabindex="0" aria-label="Explore {{ .name }}">
+          <div class="shop-cat-card-media">
+            <img
+              src="{{ .image | relURL }}"
+              alt="{{ .name }}"
+              class="shop-cat-card-img"
+              loading="lazy"
+              width="400"
+              height="300"
+            >
+            <div class="shop-cat-card-overlay"></div>
+          </div>
+          <div class="shop-cat-card-content">
+            <h4 class="shop-cat-card-title">{{ .name }}</h4>
+            {{ if .shortDesc }}
+            <p class="shop-cat-card-desc">{{ .shortDesc }}</p>
+            {{ end }}
+            <span class="shop-cat-card-cta">
+              Explore
+              <span class="icon">{{ partial "icon.html" "arrow" }}</span>
+            </span>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- 2. PRODUCT CATALOGUE SECTION -->
+    <div class="shop-products-block" id="shop-products-view">
+      <div class="shop-products-header">
+        <h3 class="shop-products-title">Online Product Showcase</h3>
+        <p class="shop-products-subtitle">Filter by category or click on any card above to view available products.</p>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="shop-filters" id="shop-filters" role="tablist" aria-label="Filter products by category">
+        <button class="shop-filter-btn is-active" data-category="All" role="tab" aria-selected="true">All</button>
+        {{ range .Site.Data.products.categories }}
+        <button class="shop-filter-btn" data-category="{{ .name }}" role="tab" aria-selected="false">{{ .name }}</button>
+        {{ end }}
+      </div>
+
+      <!-- Products Grid -->
+      <div class="shop-grid" id="shop-grid">
+        {{ $waNumber := site.Params.whatsappNumber }}
+        {{ range .Site.Data.products.products }}
+        <article class="shop-card" data-category="{{ .category }}">
+          <div class="shop-card-img-wrap">
+            <img
+              src="{{ .image | relURL }}"
+              alt="{{ .name }}"
+              class="shop-card-img"
+              loading="lazy"
+              width="400"
+              height="300"
+            >
+          </div>
+          <div class="shop-card-body">
+            <span class="shop-card-badge">{{ .category }}</span>
+            <h3 class="shop-card-name">{{ .name }}</h3>
+            {{ if .price }}
+            <p class="shop-card-price">{{ .price }}</p>
+            {{ else }}
+            <p class="shop-card-price" style="font-size: 16px; color: rgba(255,255,255,.7);">Price on Request</p>
+            {{ end }}
+            <p class="shop-card-desc">{{ .description }}</p>
+
+            {{ if eq .actionType "whatsapp" }}
+            {{ $defaultMsg := printf "Hi Gymscape, I would like to get a quotation for %s." .name }}
+            {{ $msg := .whatsappText | default $defaultMsg }}
+            <a
+              class="shop-card-cta shop-card-cta--wa"
+              href="https://wa.me/{{ $waNumber }}?text={{ $msg | urlquery }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Enquire about {{ .name }} on WhatsApp"
+            >
+              <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+              Enquire on WhatsApp
+            </a>
+            {{ else }}
+            <a
+              class="shop-card-cta"
+              href="{{ .flipkartUrl }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Buy {{ .name }} from Flipkart at Special Price"
+            >
+              Buy from Flipkart at Special Price
+              <span class="icon">{{ partial "icon.html" "arrow" }}</span>
+            </a>
+            {{ end }}
+          </div>
+        </article>
+        {{ end }}
+      </div>
+
+      <!-- Empty state -->
+      <div class="shop-empty" id="shop-empty" aria-live="polite" hidden>
+        <p>No online products found in this category yet.</p>
+        <button class="btn btn-outline shop-empty-reset" style="border-color: rgba(255,255,255,.4); color: #fff; margin-top: 16px;">Show all products</button>
+      </div>
+    </div>
+  </div>
+</section>

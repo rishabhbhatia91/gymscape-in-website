@@ -100,7 +100,7 @@ categories:
     short: "Playground"
     icon: "playground"
     tagline: "Safe, colourful play and outdoor-fitness infrastructure for every space."
-    blurb: "Multi-play stations, swings, benches and safety flooring for parks, schools, societies and public spaces."
+    blurb: "Multi-play stations, swings and safety flooring for parks, schools, societies and public spaces."
     subcategories:
       - key: multi-play-stations
         name: "Multi-Play Stations"
@@ -129,11 +129,3 @@ categories:
           - "Rubber safety tiles"
           - "PP interlocking play tiles"
           - "EPDM soft-fall flooring"
-      - key: garden-benches
-        name: "Garden Benches"
-        icon: "bench"
-        blurb: "Durable seating and shelters for parks, campuses and community spaces."
-        items:
-          - "Sheltered multi-seater benches"
-          - "Park & garden benches"
-          - "Outdoor seating units"

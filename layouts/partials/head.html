@@ -1,15 +1,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
-<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="description"
+  content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta name="keywords" content="{{ .Site.Params.keywords }}">
 <meta name="robots" content="index, follow">
 <meta name="geo.placename" content="{{ .Site.Params.city }}, {{ .Site.Params.region }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
-<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
-<link rel="alternate icon" href="{{ "favicon.ico" | relURL }}">
-<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="icon" href="{{ " favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="alternate icon" href="{{ " favicon.ico" | relURL }}">
+<link rel="apple-touch-icon" href="{{ " apple-touch-icon.png" | relURL }}">
 <meta name="theme-color" content="#0a0a0a">
 
 <meta property="og:type" content="website">
@@ -26,18 +27,20 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
 
-<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+<link rel="stylesheet" href="{{ " css/style.css" | relURL }}">
 
 {{ $services := slice
-  "Pickleball court construction contractors"
-  "Sports court flooring contractors"
-  "Playground swings manufacturers and installers"
-  "Commercial gym setup"
-  "Treadmill sellers"
-  "Billiard, snooker & pool tables"
-  "Playground equipment manufacturers"
+"Pickleball court construction contractors"
+"Sports court flooring contractors"
+"Playground swings manufacturers and installers"
+"Commercial gym setup"
+"Treadmill sellers"
+"Billiard, snooker & pool tables"
+"Playground equipment manufacturers"
 }}
 <script type="application/ld+json">
 {
