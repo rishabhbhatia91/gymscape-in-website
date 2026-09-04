@@ -188,24 +188,62 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 /* ============================================================
-   Hero
+   Hero (with Cursor-Reactive Ambient Slideshow)
    ============================================================ */
 .hero {
   position: relative;
-  background: radial-gradient(120% 140% at 15% -10%, #1c1710 0%, var(--dark) 55%), var(--dark);
+  background: var(--dark);
   color: #fff;
   overflow: hidden;
-  padding: 96px 0 88px;
+  padding: 104px 0 96px;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-slideshow {
+  position: absolute;
+  inset: -30px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center right;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) scale(1.05);
+  transition: opacity 0.85s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+.hero-slide.is-active {
+  opacity: 0.55;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0.85) 45%, rgba(10,10,10,0.4) 100%),
+              linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.88) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 .hero-glow {
   position: absolute;
-  top: -30%; right: -12%;
-  width: 620px; height: 620px;
-  background: radial-gradient(circle, rgba(238,91,49,.45) 0%, rgba(238,91,49,0) 70%);
-  filter: blur(10px);
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(238,91,49,.36) 0%, rgba(238,91,49,0) 70%);
+  filter: blur(12px);
   pointer-events: none;
+  z-index: 1;
+  top: 40%;
+  right: 15%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease, transform 0.25s ease-out;
+  will-change: left, top;
 }
-.hero-inner { position: relative; max-width: 780px; }
+.hero-inner { position: relative; max-width: 780px; z-index: 2; }
 .hero .eyebrow {
   font-family: var(--font-display);
   font-weight: 700;
@@ -224,7 +262,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero-sub {
   font-size: clamp(16px, 2vw, 19px);
   line-height: 1.6;
-  color: rgba(255,255,255,.72);
+  color: rgba(255,255,255,.78);
   max-width: 620px;
   margin: 0 0 34px;
 }
@@ -234,12 +272,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding: 9px 16px 9px 12px;
   border-radius: 999px;
   border: 1px solid var(--dark-line);
+  background: rgba(20, 20, 20, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   font-family: var(--font-display); font-weight: 600; font-size: 13.5px;
-  color: rgba(255,255,255,.85);
+  color: rgba(255,255,255,.88);
   transition: border-color .18s var(--ease), background-color .18s var(--ease);
 }
 .pill .icon { width: 18px; height: 18px; color: var(--orange); }
-.pill:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.04); }
+.pill:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.08); }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
 .hero .btn-outline { border-color: rgba(255,255,255,.4); color: #fff; }
 .hero .btn-outline:hover { background: #fff; color: var(--dark); }
