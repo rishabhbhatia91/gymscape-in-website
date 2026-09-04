@@ -16,6 +16,18 @@
       <a href="https://wa.me/{{ .Site.Params.whatsappNumber }}" target="_blank" rel="noopener">{{ .Site.Params.phoneDisplay }}</a>
       <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
     </div>
+    <div class="footer-social">
+      {{ with .Site.Params.instagram }}
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="footer-social-link footer-social-link--instagram" aria-label="Follow Gymscape on Instagram" title="Instagram">
+        <span class="icon">{{ partial "icon.html" "instagram" }}</span>
+      </a>
+      {{ end }}
+      {{ with .Site.Params.facebook }}
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="footer-social-link footer-social-link--facebook" aria-label="Follow Gymscape on Facebook" title="Facebook">
+        <span class="icon">{{ partial "icon.html" "facebook" }}</span>
+      </a>
+      {{ end }}
+    </div>
   </div>
   <div class="wrap footer-legal">
     <p>&copy; {{ now.Format "2006" }} Gymscape / Bhatia Sports. All rights reserved.</p>

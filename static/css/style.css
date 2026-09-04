@@ -484,11 +484,47 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .footer-nav a:hover { color: #fff; }
 .footer-contact { display: flex; gap: 20px; font-size: 13.5px; flex-wrap: wrap; }
 .footer-contact a:hover { color: #fff; }
+.footer-social { display: inline-flex; align-items: center; gap: 10px; }
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid var(--dark-line);
+  color: rgba(255, 255, 255, .7);
+  transition: all .22s var(--ease);
+}
+.footer-social-link .icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-social-link:hover {
+  transform: translateY(-2px);
+}
+.footer-social-link--instagram:hover {
+  color: #fff;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(214, 36, 159, .35);
+}
+.footer-social-link--facebook:hover {
+  color: #fff;
+  background: #1877f2;
+  border-color: #1877f2;
+  box-shadow: 0 4px 15px rgba(24, 119, 242, .35);
+}
 .footer-legal { padding: 16px 24px 26px; font-size: 12px; border-top: 1px solid var(--dark-line); }
 
 @media (max-width: 700px) {
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .footer-nav { margin-left: 0; }
+  .footer-social { margin-top: 4px; }
 }
 
 /* ============================================================

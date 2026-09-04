@@ -6,6 +6,7 @@
 <meta name="keywords" content="{{ .Site.Params.keywords }}">
 <meta name="robots" content="index, follow">
 <meta name="geo.placename" content="{{ .Site.Params.city }}, {{ .Site.Params.region }}">
+{{ with .Site.Params.googleSiteVerification }}<meta name="google-site-verification" content="{{ . }}">{{ end }}
 <link rel="canonical" href="{{ .Permalink }}">
 
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
