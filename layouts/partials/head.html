@@ -72,11 +72,78 @@
     "addressRegion": "{{ .Site.Params.region }}",
     "addressCountry": "IN"
   },
-  "areaServed": "IN",
+  "priceRange": "$$",
+  "sameAs": [
+    {{ with .Site.Params.instagram }}"{{ . }}",{{ end }}
+    {{ with .Site.Params.facebook }}"{{ . }}",{{ end }}
+    {{ range .Site.Params.outlets }}"{{ .mapUrl }}",{{ end }}
+    "{{ .Site.BaseURL }}"
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "{{ .Site.Params.city }}" },
+    { "@type": "AdministrativeArea", "name": "{{ .Site.Params.region }}" },
+    { "@type": "Country", "name": "India" }
+  ],
   "makesOffer": [
     {{ range $i, $s := $services }}{{ if $i }},{{ end }}
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ $s }} } }
     {{ end }}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does pickleball court construction cost in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pickleball court construction cost depends on your site conditions (new civil base vs. existing tennis/badminton court conversion), surface type (cushioned 8-layer acrylic system or PP interlocking tiles), perimeter fencing, and LED floodlighting. Gymscape provides turnkey court construction across Lucknow, UP, and India with standard official 20x44 ft playing dimensions and complete weatherproof line marking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is included in a turnkey commercial gym setup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our turnkey commercial gym setup covers 3D space planning, supply of heavy-duty commercial cardio (motorised treadmills, cross trainers, spin bikes), selectorised strength machines (chest press, lat pull down, leg press), free weights (dumbbells 1-50 kg, Olympic rods, plates), functional racks, and shock-absorbing high-density rubber gym flooring tiles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your playground swings and multiplay stations weather-resistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. As leading playground equipment manufacturers in Lucknow, our playground swings, multi-play stations, and open-air fitness units are manufactured using heavy-gauge galvanised steel (GI pipes), UV-stabilised food-grade LLDPE rotational plastics, and pure polyester anti-rust powder coating to withstand extreme sun, monsoons, and heavy daily usage in parks, schools, and residential societies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you supply and install equipment outside Lucknow across India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. While rooted in Lucknow with four decades of heritage since 1982, Gymscape supplies and installs sports courts, commercial gyms, and institutional playground setups across Uttar Pradesh (Kanpur, Varanasi, Gorakhpur, Agra, Prayagraj, Noida), Delhi NCR, Bihar, and all major regions across India."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are your physical outlets in Lucknow to see live demos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can visit our two physical stores in Lucknow: Lalbagh Outlet (near Novelty Cinema) and Old Outlet (Bhatia Sports, Est. 1982). You can test treadmills, inspect rubber flooring, sample sports turf, and explore equipment in person."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I get a customized quotation or project consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simply click our WhatsApp button or call us at +91 96964 22319. Share your space area, requirements, or photo of your site, and our project specialists will provide a detailed quotation with layout recommendations within 24 hours."
+      }
+    }
   ]
 }
 </script>

@@ -1,6 +1,6 @@
 baseURL = 'https://gymscape.in/'
 languageCode = 'en-in'
-title = 'Gymscape | Sports, Fitness & Playground Equipment in Lucknow'
+title = 'Gymscape | Pickleball Courts, Commercial Gyms & Playground Equipment Lucknow'
 theme = []
 enableRobotsTXT = true
 summarylength = 20
@@ -15,8 +15,8 @@ disableKinds = ['taxonomy', 'term']
   filename = 'sitemap.xml'
 
 [params]
-  description = "Gymscape by Bhatia Sports (Est. 1982), Lucknow - pickleball & sports court construction contractors, commercial gym setup, playground swings manufacturers & installers, and treadmill sellers across India."
-  keywords = "pickleball court contractors, pickleball court construction, playground swings manufacturers, playground swings installers, commercial gym setup, treadmill sellers, treadmill dealers, billiard table, snooker table, sports flooring contractors, sports equipment dealer Lucknow, gym equipment dealer Lucknow, playground equipment manufacturer India"
+  description = "Gymscape by Bhatia Sports (Est. 1982), Lucknow. Turnkey pickleball court contractors, commercial gym setup, playground swings manufacturers, and treadmill dealers across India."
+  keywords = "pickleball court contractors, pickleball court construction, commercial gym setup, playground swings manufacturers, playground equipment Lucknow, sports court flooring contractors, treadmill dealers Lucknow, billiard table, snooker table, sports equipment dealer Lucknow, gym equipment setup Uttar Pradesh, Gymscape Bhatia Sports"
   brandName = "Gymscape"
   legacyName = "Bhatia Sports"
   legacyEst = "1982"
