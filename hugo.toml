@@ -28,6 +28,7 @@ disableKinds = ['taxonomy', 'term']
   instagram = "https://www.instagram.com/gym_scape/"
   facebook = "https://www.facebook.com/profile.php?id=61591664924124"
   googleSiteVerification = "rO-DocUiQHRLQC3kjCDgCIc9DDtgxO0SMEOGoCYmE1o"
+  googleAnalyticsId = "G-Y93Z0Q1L3M"
   ogImage = "images/og-cover.jpg"
   city = "Lucknow"
   region = "Uttar Pradesh"
