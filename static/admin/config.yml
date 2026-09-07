@@ -103,8 +103,9 @@ collections:
               - { label: "Product Name", name: "name", widget: "string" }
               - { label: "Category Name", name: "category", widget: "string" }
               - { label: "Category ID", name: "categoryId", widget: "string" }
-              - { label: "Price (e.g. ₹22,990)", name: "price", widget: "string" }
+              - { label: "Price (Optional, e.g. ₹22,990)", name: "price", widget: "string", required: false }
               - { label: "Product Image", name: "image", widget: "image" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Action Type", name: "actionType", widget: "select", options: ["flipkart", "whatsapp", "inquire"], default: "flipkart" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Action Type", name: "actionType", widget: "select", options: ["flipkart", "whatsapp", "inquire"], default: "whatsapp", required: false }
               - { label: "Buy URL (Flipkart / Link)", name: "flipkartUrl", widget: "string", required: false }
+              - { label: "Custom WhatsApp Message", name: "whatsappText", widget: "string", required: false }
