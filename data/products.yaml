@@ -79,29 +79,6 @@ products:
     actionType: whatsapp
     flipkartUrl: ''
     whatsappText: Hi Gymscape, I would like to enquire about customised playground equipment.
-  - id: gym-dumb-01
-    name: Dumble set of 10Kg
-    category: Gym & Fitness equipment
-    categoryId: gym-fitness
-    price: '6000'
-    image: /images/uploads/rubber-rock-solid-dumbbell-set-of-2-10kg-x-2-20kg-black-20-original-imafxf7u2zdyzaht.webp
-    description: |-
-      Upgrade your strength training with our durable and versatile Dumbbell, designed for home gyms, fitness centres, and professional workout spaces. Built for comfortable handling and reliable performance, it is ideal for a wide range of exercises targeting the arms, shoulders, chest, back, and overall body strength.
-
-      Key Features:
-
-      Durable and sturdy construction
-      Comfortable grip for secure handling
-      Suitable for strength training and muscle conditioning
-      Ideal for home, gym, and commercial fitness setups
-      Available in multiple weight options
-      Easy to use for beginners as well as experienced athletes
-
-      Perfect For:
-      Biceps curls, shoulder presses, triceps exercises, lateral raises, chest workouts, lunges, squats, and full-body strength training.
-    actionType: flipkart
-    flipkartUrl: https://www.flipkart.com/bhatia-sports-rubber-rock-solid-dumbbell-set-2-10kg-x-2-20kg-black-fixed-weight/p/itm8d27c26a84821?pid=DBLFUZYVZ95ZNPFE&lid=LSTDBLFUZYVZ95ZNPFE46CYNC&marketplace=FLIPKART&q=bhatia+sports+&store=search.flipkart.com&srno=s_1_1&otracker=search&otracker1=search&fm=Search&iid=fa19f5c7-156a-4044-8429-2de93d4fc274.DBLFUZYVZ95ZNPFE.SEARCH&ppt=sp&ppn=sp&ssid=bvxuig54fk0000001788785422132&qH=65f0c7061dcd4abe&ov_redirect=true&ov_redirect=true
-    whatsappText: ''
 categories:
   - id: sports-goods
     image: /images/categories/sports-goods.jpg
