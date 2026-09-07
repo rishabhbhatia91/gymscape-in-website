@@ -1,0 +1,63 @@
+# Pages CMS Configuration (https://pagescms.org)
+media:
+  input: static/images/uploads
+  output: /images/uploads
+
+content:
+  - name: blog
+    label: Blog Articles
+    type: collection
+    path: content/blog
+    exclude: _index.md
+    view:
+      fields: [title, date, category]
+      primary: title
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { 
+          name: category, 
+          label: Category, 
+          type: string, 
+          options: [
+            "Sports Court Construction", 
+            "Commercial Gym Setup", 
+            "Playground & Safety", 
+            "Equipment Maintenance",
+            "Sports Insights"
+          ] 
+        }
+      - { name: image, label: Featured Image, type: image }
+      - { name: description, label: Meta Description, type: text }
+      - { name: keywords, label: Keywords, type: string }
+      - { name: body, label: Body Content, type: rich-text }
+
+  - name: projects
+    label: Executed Projects
+    type: collection
+    path: content/projects
+    exclude: _index.md
+    view:
+      fields: [title, category, location, year]
+      primary: title
+    fields:
+      - { name: title, label: Project Title, type: string, required: true }
+      - { name: date, label: Date Completed, type: date, required: true }
+      - { name: category, label: Category, type: string, options: ["Sports Courts", "Commercial Gym", "Playgrounds", "Multi-Sport Arena"] }
+      - { name: location, label: Location, type: string }
+      - { name: year, label: Year, type: string }
+      - { name: client, label: Client, type: string }
+      - { name: area, label: Total Area, type: string }
+      - { name: scope, label: Scope of Work, type: string }
+      - { name: surface, label: Flooring / Surface, type: string }
+      - { name: duration, label: Execution Time, type: string }
+      - { name: image, label: Featured Photo, type: image }
+      - { name: description, label: Summary Description, type: text }
+      - name: testimonial
+        label: Testimonial
+        type: object
+        fields:
+          - { name: quote, label: Quote, type: text }
+          - { name: author, label: Author, type: string }
+          - { name: role, label: Role, type: string }
+      - { name: body, label: Case Study Content, type: rich-text }
