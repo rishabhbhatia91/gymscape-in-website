@@ -1,101 +1,129 @@
-categories:
-  - id: "sports-goods"
-    name: "Sports Goods"
-    shortDesc: "Match-ready cricket, badminton, pickleball, and sports gear."
-    image: "/images/categories/sports-goods.jpg"
-  - id: "yoga-equipment"
-    name: "Yoga Equipment"
-    shortDesc: "Premium yoga mats, cork blocks, straps, and wellness accessories."
-    image: "/images/categories/yoga-equipment.png"
-  - id: "gym-fitness"
-    name: "Gym & Fitness Equipment"
-    shortDesc: "Commercial & home fitness machines, dumbbells, weights, and accessories."
-    image: "/images/categories/fitness-equipment.jpg"
-  - id: "sports-tables"
-    name: "Sports Tables"
-    shortDesc: "Table tennis tables, pool & billiard tables, foosball, and air hockey."
-    image: "/images/categories/sports-tables.png"
-  - id: "open-gym"
-    name: "Open Gym Equipment"
-    shortDesc: "Heavy-duty outdoor fitness stations for parks, RWAs, and campuses."
-    image: "/images/categories/open-gym.png"
-  - id: "playground-swings"
-    name: "Playground Swings & Equipment"
-    shortDesc: "Safe, weather-resistant swings, multi-play stations, and slides."
-    image: "/images/categories/playground-swings.png"
-
 products:
-  - id: "gym-airbike-001"
-    name: "Gymscape Air Bike 2-in-1"
-    category: "Gym & Fitness Equipment"
-    categoryId: "gym-fitness"
-    price: "₹22,990"
-    image: "/images/products/airbike-2-in-1.png"
-    description: "This AirBike features a steel frame, soft-foam handlebar grips, vertical seat adjustment, detachable seat, 9 resistance levels, no transport wheels, and an LED display showing time, distance, scan, and calories."
-    actionType: "flipkart"
-    flipkartUrl: "https://www.flipkart.com/bhatia-sports-airbike-2-in-1-exercise-cycle-hybrid-bike-cycle-home-dual-action-stationary-bike/p/itm333cfc95d1feb?pid=EXBFX5RBRX9QZ49M&lid=LSTEXBFX5RBRX9QZ49M9TKWLT&marketplace=FLIPKART&q=bhatia+sports+&store=search.flipkart.com&srno=s_1_9&otracker=search&otracker1=search&fm=Search&iid=867f39b1-9e56-4c8e-8106-927b0e2d2c47.EXBFX5RBRX9QZ49M.SEARCH&ppt=sp&ppn=sp&ssid=rydraawea80000001788419851168&qH=65f0c7061dcd4abe&ov_redirect=true&ov_redirect=true"
+  - id: gym-airbike-001
+    name: Gymscape Air Bike 2-in-1
+    category: Gym & Fitness Equipment
+    categoryId: gym-fitness
+    price: ₹22,990
+    image: /images/products/airbike-2-in-1.png
+    description: This AirBike features a steel frame, soft-foam handlebar grips, vertical seat adjustment, detachable seat, 9 resistance levels, no transport wheels, and an LED display showing time, distance, scan, and calories.
+    actionType: flipkart
+    flipkartUrl: https://www.flipkart.com/bhatia-sports-airbike-2-in-1-exercise-cycle-hybrid-bike-cycle-home-dual-action-stationary-bike/p/itm333cfc95d1feb?pid=EXBFX5RBRX9QZ49M&lid=LSTEXBFX5RBRX9QZ49M9TKWLT&marketplace=FLIPKART&q=bhatia+sports+&store=search.flipkart.com&srno=s_1_9&otracker=search&otracker1=search&fm=Search&iid=867f39b1-9e56-4c8e-8106-927b0e2d2c47.EXBFX5RBRX9QZ49M.SEARCH&ppt=sp&ppn=sp&ssid=rydraawea80000001788419851168&qH=65f0c7061dcd4abe&ov_redirect=true&ov_redirect=true
+    whatsappText: ''
+  - id: gym-trd-002
+    name: Gymscape Manual Treadmill
+    category: Gym & Fitness Equipment
+    categoryId: gym-fitness
+    price: ₹34,990
+    image: /images/products/gymscape-manual-treadmill.png
+    description: The Gymscape Manual Roller Jogger is a versatile, pre-assembled manual treadmill designed for use at home, outdoors, gyms, offices, schools, clubs, and institutions. It features a sturdy base stand with 2 transportation wheels, left and right towers, a U-shaped handle with 2 grips, roller plastic covers, an LCD display, and all necessary screws, bolts, nuts, and assembly tools. With a maximum speed of 9.5 km/h, this manual roller jogger offers a practical and reliable workout solution for everyday fitness needs.
+    actionType: flipkart
+    flipkartUrl: https://www.flipkart.com/bhatia-sports-manual-treadmill-roller-jogging-machine-foldable-tread-mill-treadmill-max-weight-200-kg/p/itm1e206f5e86f36?pid=TRDG26WRZFYH85DR&lid=LSTTRDG26WRZFYH85DRE6CQS1&marketplace=FLIPKART&q=bhatia+sports+&store=search.flipkart.com&srno=s_1_6&otracker=search&otracker1=search&fm=Search&iid=867f39b1-9e56-4c8e-8106-927b0e2d2c47.TRDG26WRZFYH85DR.SEARCH&ppt=sp&ppn=sp&ssid=rydraawea80000001788419851168&qH=65f0c7061dcd4abe&ov_redirect=true&ov_redirect=true
+    whatsappText: ''
+  - id: gym-airbike-003
+    name: Gymscape Dual-Action Stationary Exercise Cycle
+    category: Gym & Fitness Equipment
+    categoryId: gym-fitness
+    price: ₹21,990
+    image: /images/products/stationary-exercise-cycle.png
+    description: Designed for durability and comfort, this fitness equipment features a heavy-quality alloy steel frame with a sturdy alloy-steel handlebar. The handlebar is equipped with cushioned foam, sweat-absorbing anti-skid grips, and paddles for a secure and comfortable workout. It comes with solid rubber pedals with buckle straps and solid rubber-coated metal pedal covers for enhanced stability and grip. The vertically adjustable seat and adjustable handlebars allow users to customize their workout position, while the cushioned foam handlebar grips provide added comfort during extended exercise sessions.
+    actionType: flipkart
+    flipkartUrl: https://www.flipkart.com/bhatia-sports-air-bike-exercise-cycle-dual-action-cardio-cycle-elliptical-exerciser-dual-action-stationary/p/itm8ac84b9a774c6?pid=EXBGQQC2MTHWXTGZ&lid=LSTEXBGQQC2MTHWXTGZSK3ERR&marketplace=FLIPKART&q=bhatia+sports+&store=search.flipkart.com&srno=s_1_7&otracker=search&otracker1=search&fm=Search&iid=867f39b1-9e56-4c8e-8106-927b0e2d2c47.EXBGQQC2MTHWXTGZ.SEARCH&ppt=sp&ppn=sp&ssid=rydraawea80000001788419851168&qH=65f0c7061dcd4abe&ov_redirect=true&ov_redirect=true
+    whatsappText: ''
+  - id: gym-spt-range
+    name: Sports Goods & Equipment
+    category: Sports Goods
+    categoryId: sports-goods
+    price: ''
+    image: /images/categories/sports-goods.jpg
+    description: Complete range of professional sports goods and equipment for cricket, badminton, pickleball, tennis, basketball, football, and institutional sports. Available in wholesale, bulk, and retail.
+    actionType: whatsapp
+    flipkartUrl: ''
+    whatsappText: Hi Gymscape, I would like to enquire about sports goods and equipment for our requirements.
+  - id: gym-yog-range
+    name: Yoga & Wellness Equipment
+    category: Yoga Equipment
+    categoryId: yoga-equipment
+    price: ''
+    image: /images/categories/yoga-equipment.png
+    description: Premium eco-friendly non-slip yoga mats, high-density cork and foam blocks, straps, wheels, and wellness accessories for studios, gyms, institutions, and personal practice.
+    actionType: whatsapp
+    flipkartUrl: ''
+    whatsappText: Hi Gymscape, I would like to enquire about yoga and wellness equipment.
+  - id: gym-tbl-range
+    name: Table Tennis, Billiard & Sports Tables
+    category: Sports Tables
+    categoryId: sports-tables
+    price: ''
+    image: /images/categories/sports-tables.png
+    description: Tournament-grade table tennis tables, pool & snooker tables, foosball tables, air hockey, and accessories for clubs, institutions, schools, and game rooms.
+    actionType: whatsapp
+    flipkartUrl: ''
+    whatsappText: Hi Gymscape, I would like to enquire about sports tables (TT / Pool / Snooker / Foosball).
+  - id: gym-opn-009
+    name: Outdoor Gym Station
+    category: Open Gym Equipment
+    categoryId: open-gym
+    price: ''
+    image: /images/categories/open-gym.png
+    description: Heavy-duty outdoor fitness station designed for parks, residential communities, schools, clubs, and institutional spaces. Built with durable, weather-resistant construction and anti-rust powder coating for reliable performance in outdoor environments.
+    actionType: whatsapp
+    flipkartUrl: ''
+    whatsappText: Hi Gymscape, I would like to get a quotation and installation details for Gymscape Outdoor Gym Station.
+  - id: gym-plg-010
+    name: Customised Playground Equipment
+    category: Playground Swings & Equipment
+    categoryId: playground-swings
+    price: ''
+    image: /images/products/swing-set.png
+    description: Heavy-duty customised playground equipment designed for parks, schools, residential communities, clubs, and institutional spaces. Built with durable, weather-resistant materials and available in customised configurations to suit your space, design, and requirements.
+    actionType: whatsapp
+    flipkartUrl: ''
+    whatsappText: Hi Gymscape, I would like to enquire about customised playground equipment.
+  - id: gym-dumb-01
+    name: Dumble set of 10Kg
+    category: Gym & fitness equipment
+    categoryId: gym-fitness
+    price: '6000'
+    image: /images/uploads/rubber-rock-solid-dumbbell-set-of-2-10kg-x-2-20kg-black-20-original-imafxf7u2zdyzaht.webp
+    description: |-
+      Upgrade your strength training with our durable and versatile Dumbbell, designed for home gyms, fitness centres, and professional workout spaces. Built for comfortable handling and reliable performance, it is ideal for a wide range of exercises targeting the arms, shoulders, chest, back, and overall body strength.
 
-  - id: "gym-trd-002"
-    name: "Gymscape Manual Treadmill"
-    category: "Gym & Fitness Equipment"
-    categoryId: "gym-fitness"
-    price: "₹34,990"
-    image: "/images/products/gymscape-manual-treadmill.png"
-    description: "The Gymscape Manual Roller Jogger is a versatile, pre-assembled manual treadmill designed for use at home, outdoors, gyms, offices, schools, clubs, and institutions. It features a sturdy base stand with 2 transportation wheels, left and right towers, a U-shaped handle with 2 grips, roller plastic covers, an LCD display, and all necessary screws, bolts, nuts, and assembly tools. With a maximum speed of 9.5 km/h, this manual roller jogger offers a practical and reliable workout solution for everyday fitness needs."
-    actionType: "flipkart"
-    flipkartUrl: "https://www.flipkart.com/bhatia-sports-manual-treadmill-roller-jogging-machine-foldable-tread-mill-treadmill-max-weight-200-kg/p/itm1e206f5e86f36?pid=TRDG26WRZFYH85DR&lid=LSTTRDG26WRZFYH85DRE6CQS1&marketplace=FLIPKART&q=bhatia+sports+&store=search.flipkart.com&srno=s_1_6&otracker=search&otracker1=search&fm=Search&iid=867f39b1-9e56-4c8e-8106-927b0e2d2c47.TRDG26WRZFYH85DR.SEARCH&ppt=sp&ppn=sp&ssid=rydraawea80000001788419851168&qH=65f0c7061dcd4abe&ov_redirect=true&ov_redirect=true"
+      Key Features:
 
-  - id: "gym-airbike-003"
-    name: "Gymscape Dual-Action Stationary Exercise Cycle"
-    category: "Gym & Fitness Equipment"
-    categoryId: "gym-fitness"
-    price: "₹21,990"
-    image: "/images/products/stationary-exercise-cycle.png"
-    description: "Designed for durability and comfort, this fitness equipment features a heavy-quality alloy steel frame with a sturdy alloy-steel handlebar. The handlebar is equipped with cushioned foam, sweat-absorbing anti-skid grips, and paddles for a secure and comfortable workout. It comes with solid rubber pedals with buckle straps and solid rubber-coated metal pedal covers for enhanced stability and grip. The vertically adjustable seat and adjustable handlebars allow users to customize their workout position, while the cushioned foam handlebar grips provide added comfort during extended exercise sessions."
-    actionType: "flipkart"
-    flipkartUrl: "https://www.flipkart.com/bhatia-sports-air-bike-exercise-cycle-dual-action-cardio-cycle-elliptical-exerciser-dual-action-stationary/p/itm8ac84b9a774c6?pid=EXBGQQC2MTHWXTGZ&lid=LSTEXBGQQC2MTHWXTGZSK3ERR&marketplace=FLIPKART&q=bhatia+sports+&store=search.flipkart.com&srno=s_1_7&otracker=search&otracker1=search&fm=Search&iid=867f39b1-9e56-4c8e-8106-927b0e2d2c47.EXBGQQC2MTHWXTGZ.SEARCH&ppt=sp&ppn=sp&ssid=rydraawea80000001788419851168&qH=65f0c7061dcd4abe&ov_redirect=true&ov_redirect=true"
+      Durable and sturdy construction
+      Comfortable grip for secure handling
+      Suitable for strength training and muscle conditioning
+      Ideal for home, gym, and commercial fitness setups
+      Available in multiple weight options
+      Easy to use for beginners as well as experienced athletes
 
-  - id: "gym-spt-range"
-    name: "Sports Goods & Equipment"
-    category: "Sports Goods"
-    categoryId: "sports-goods"
-    image: "/images/categories/sports-goods.jpg"
-    description: "Complete range of professional sports goods and equipment for cricket, badminton, pickleball, tennis, basketball, football, and institutional sports. Available in wholesale, bulk, and retail."
-    actionType: "whatsapp"
-    whatsappText: "Hi Gymscape, I would like to enquire about sports goods and equipment for our requirements."
-
-  - id: "gym-yog-range"
-    name: "Yoga & Wellness Equipment"
-    category: "Yoga Equipment"
-    categoryId: "yoga-equipment"
-    image: "/images/categories/yoga-equipment.png"
-    description: "Premium eco-friendly non-slip yoga mats, high-density cork and foam blocks, straps, wheels, and wellness accessories for studios, gyms, institutions, and personal practice."
-    actionType: "whatsapp"
-    whatsappText: "Hi Gymscape, I would like to enquire about yoga and wellness equipment."
-
-  - id: "gym-tbl-range"
-    name: "Table Tennis, Billiard & Sports Tables"
-    category: "Sports Tables"
-    categoryId: "sports-tables"
-    image: "/images/categories/sports-tables.png"
-    description: "Tournament-grade table tennis tables, pool & snooker tables, foosball tables, air hockey, and accessories for clubs, institutions, schools, and game rooms."
-    actionType: "whatsapp"
-    whatsappText: "Hi Gymscape, I would like to enquire about sports tables (TT / Pool / Snooker / Foosball)."
-
-  - id: "gym-opn-009"
-    name: "Outdoor Gym Station"
-    category: "Open Gym Equipment"
-    categoryId: "open-gym"
-    image: "/images/categories/open-gym.png"
-    description: "Heavy-duty outdoor fitness station designed for parks, residential communities, schools, clubs, and institutional spaces. Built with durable, weather-resistant construction and anti-rust powder coating for reliable performance in outdoor environments."
-    actionType: "whatsapp"
-    whatsappText: "Hi Gymscape, I would like to get a quotation and installation details for Gymscape Outdoor Gym Station."
-
-  - id: "gym-plg-010"
-    name: "Customised Playground Equipment"
-    category: "Playground Swings & Equipment"
-    categoryId: "playground-swings"
-    image: "/images/products/swing-set.png"
-    description: "Heavy-duty customised playground equipment designed for parks, schools, residential communities, clubs, and institutional spaces. Built with durable, weather-resistant materials and available in customised configurations to suit your space, design, and requirements."
-    actionType: "whatsapp"
-    whatsappText: "Hi Gymscape, I would like to enquire about customised playground equipment."
+      Perfect For:
+      Biceps curls, shoulder presses, triceps exercises, lateral raises, chest workouts, lunges, squats, and full-body strength training.
+    actionType: flipkart
+    flipkartUrl: https://www.flipkart.com/bhatia-sports-rubber-rock-solid-dumbbell-set-2-10kg-x-2-20kg-black-fixed-weight/p/itm8d27c26a84821?pid=DBLFUZYVZ95ZNPFE&lid=LSTDBLFUZYVZ95ZNPFE46CYNC&marketplace=FLIPKART&q=bhatia+sports+&store=search.flipkart.com&srno=s_1_1&otracker=search&otracker1=search&fm=Search&iid=fa19f5c7-156a-4044-8429-2de93d4fc274.DBLFUZYVZ95ZNPFE.SEARCH&ppt=sp&ppn=sp&ssid=bvxuig54fk0000001788785422132&qH=65f0c7061dcd4abe&ov_redirect=true&ov_redirect=true
+    whatsappText: ''
+categories:
+  - id: sports-goods
+    image: /images/categories/sports-goods.jpg
+    name: Sports Goods
+    shortDesc: Match-ready cricket, badminton, pickleball, and sports gear.
+  - id: yoga-equipment
+    image: /images/categories/yoga-equipment.png
+    name: Yoga Equipment
+    shortDesc: Premium yoga mats, cork blocks, straps, and wellness accessories.
+  - id: gym-fitness
+    image: /images/categories/fitness-equipment.jpg
+    name: Gym & Fitness Equipment
+    shortDesc: Commercial & home fitness machines, dumbbells, weights, and accessories.
+  - id: sports-tables
+    image: /images/categories/sports-tables.png
+    name: Sports Tables
+    shortDesc: Table tennis tables, pool & billiard tables, foosball, and air hockey.
+  - id: open-gym
+    image: /images/categories/open-gym.png
+    name: Open Gym Equipment
+    shortDesc: Heavy-duty outdoor fitness stations for parks, RWAs, and campuses.
+  - id: playground-swings
+    image: /images/categories/playground-swings.png
+    name: Playground Swings & Equipment
+    shortDesc: Safe, weather-resistant swings, multi-play stations, and slides.
