@@ -81,7 +81,7 @@ products:
     whatsappText: Hi Gymscape, I would like to enquire about customised playground equipment.
   - id: gym-dumb-01
     name: Dumble set of 10Kg
-    category: Gym & fitness equipment
+    category: Gym & Fitness equipment
     categoryId: gym-fitness
     price: '6000'
     image: /images/uploads/rubber-rock-solid-dumbbell-set-of-2-10kg-x-2-20kg-black-20-original-imafxf7u2zdyzaht.webp
