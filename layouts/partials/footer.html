@@ -5,13 +5,15 @@
       <p>A Bhatia Sports company &middot; Est. {{ .Site.Params.legacyEst }}</p>
     </div>
     <nav class="footer-nav" aria-label="Footer">
-      <a href="#sports">Sports</a>
-      <a href="#fitness">Fitness</a>
-      <a href="#playground">Playground</a>
-      <a href="#shop-online">Shop Online</a>
-      <a href="#about">About</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+      <a href="{{ "/" | relURL }}#sports">Sports</a>
+      <a href="{{ "/" | relURL }}#fitness">Fitness</a>
+      <a href="{{ "/" | relURL }}#playground">Playground</a>
+      <a href="{{ "projects/" | relURL }}">Projects</a>
+      <a href="{{ "blog/" | relURL }}">Blog</a>
+      <a href="{{ "/" | relURL }}#shop-online">Shop Online</a>
+      <a href="{{ "/" | relURL }}#about">About</a>
+      <a href="{{ "/" | relURL }}#faq">FAQ</a>
+      <a href="{{ "/" | relURL }}#contact">Contact</a>
     </nav>
     <div class="footer-contact">
       <a href="https://wa.me/{{ .Site.Params.whatsappNumber }}" target="_blank" rel="noopener">{{ .Site.Params.phoneDisplay }}</a>

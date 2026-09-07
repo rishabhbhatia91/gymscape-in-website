@@ -1,0 +1,127 @@
+{{ define "main" }}
+<article class="article-page" itemscope itemtype="https://schema.org/BlogPosting">
+  <section class="subpage-hero subpage-hero--article">
+    <div class="wrap subpage-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ "/" | relURL }}">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="{{ "blog/" | relURL }}">Blog & Guides</a>
+        <span class="breadcrumb-sep">/</span>
+        <span aria-current="page">{{ .Title }}</span>
+      </nav>
+      
+      <div class="article-hero-meta">
+        {{ with .Params.category }}
+        <span class="post-category-badge">{{ . }}</span>
+        {{ end }}
+        <span class="article-date" itemprop="datePublished" content="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "January 02, 2006" }}
+        </span>
+        <span class="meta-dot">&middot;</span>
+        <span class="article-reading-time">{{ .ReadingTime }} min read</span>
+      </div>
+
+      <h1 class="subpage-title article-title" itemprop="headline">{{ .Title }}</h1>
+      
+      {{ with .Description }}
+      <p class="subpage-lead article-lead" itemprop="description">{{ . }}</p>
+      {{ end }}
+
+      <div class="article-author-meta" itemprop="author" itemscope itemtype="https://schema.org/Organization">
+        <img src="{{ "images/bhatia-sports-badge.png" | relURL }}" alt="Gymscape Bhatia Sports" class="author-avatar">
+        <div>
+          <span class="author-name" itemprop="name">Gymscape Sports Engineering Team</span>
+          <span class="author-title">Bhatia Sports (Est. 1982) &middot; Turnkey Sports Infrastructure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ if .Params.image }}
+  <div class="wrap article-featured-image-wrap">
+    <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="article-featured-image" itemprop="image">
+  </div>
+  {{ end }}
+
+  <div class="wrap article-layout">
+    <div class="article-content-body" itemprop="articleBody">
+      {{ .Content }}
+
+      <div class="article-consult-box">
+        <div class="article-consult-icon">
+          <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+        </div>
+        <div class="article-consult-content">
+          <h3>Need customized advice or cost estimation for this?</h3>
+          <p>Talk directly with our project specialists. We provide turnkey layout recommendations and quotes across India.</p>
+          <a class="btn btn-primary" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ (printf "Hi Gymscape, I was reading '%s' and want a quote/advice for my project." .Title) | urlquery }}" target="_blank" rel="noopener">
+            <span>Inquire on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-sidebar">
+      <div class="article-sidebar-sticky">
+        <div class="sidebar-card sidebar-cta-card">
+          <div class="sidebar-badge">Free Technical Consultation</div>
+          <h4>Planning a sports court, commercial gym or playground?</h4>
+          <p>Get CAD layouts, equipment specs, and transparent turnkey pricing within 24 hours.</p>
+          <a class="btn btn-primary btn-block" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ `Hi Gymscape, I would like to request a technical consultation for my project.` | urlquery }}" target="_blank" rel="noopener">
+            <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+            <span>Chat with Engineers</span>
+          </a>
+          <a class="btn btn-ghost btn-block" href="tel:+{{ .Site.Params.phoneE164 }}">
+            <span class="icon">{{ partial "icon.html" "phone" }}</span>
+            <span>Call {{ .Site.Params.phoneDisplay }}</span>
+          </a>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Explore More Categories</h4>
+          <ul class="sidebar-nav-list">
+            <li><a href="{{ "/" | relURL }}#sports">Sports Court Flooring & Construction &rarr;</a></li>
+            <li><a href="{{ "/" | relURL }}#fitness">Commercial Gym Setups & Equipment &rarr;</a></li>
+            <li><a href="{{ "/" | relURL }}#playground">School & Society Playground Swings &rarr;</a></li>
+            <li><a href="{{ "projects/" | relURL }}">View Executed Projects &rarr;</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap article-footer-nav">
+    <a href="{{ "blog/" | relURL }}" class="btn btn-ghost">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Back to all Guides</span>
+    </a>
+  </div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title }},
+  "description": {{ .Description | default .Summary }},
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Params.brandName }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ "images/gymscape-logo-trimmed.jpg" | absURL }}"
+    }
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Gymscape Sports Engineering Team"
+  }
+}
+</script>
+{{ end }}

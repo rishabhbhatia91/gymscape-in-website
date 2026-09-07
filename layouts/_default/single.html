@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="subpage-hero">
+  <div class="wrap subpage-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ "/" | relURL }}">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+    <h1 class="subpage-title">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="subpage-lead">{{ . }}</p>
+    {{ end }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap article-layout">
+    <div class="article-content-body">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+{{ end }}

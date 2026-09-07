@@ -1,0 +1,33 @@
+{{ define "main" }}
+<section class="subpage-hero">
+  <div class="wrap subpage-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ "/" | relURL }}">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+    <h1 class="subpage-title">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="subpage-lead">{{ . }}</p>
+    {{ end }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="posts-grid">
+      {{ range .Pages }}
+      <article class="post-card">
+        <div class="post-card-content">
+          <h2 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p class="post-card-excerpt">{{ .Summary | plainify | truncate 130 }}</p>
+          <div class="post-card-footer">
+            <a href="{{ .RelPermalink }}" class="post-read-more">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

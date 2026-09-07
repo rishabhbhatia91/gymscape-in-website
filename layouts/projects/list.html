@@ -1,0 +1,96 @@
+{{ define "main" }}
+<section class="subpage-hero">
+  <div class="wrap subpage-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ "/" | relURL }}">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span aria-current="page">Executed Projects</span>
+    </nav>
+    <div class="subpage-badge">Case Studies & Showcase</div>
+    <h1 class="subpage-title">Featured Turnkey Installations</h1>
+    <p class="subpage-lead">Explore our completed pickleball courts, multi-sport arenas, premium commercial gyms, and institutional playground projects built across India.</p>
+  </div>
+</section>
+
+<section class="section project-list-section">
+  <div class="wrap">
+    <div class="projects-grid">
+      {{ range .Pages.ByDate.Reverse }}
+      <article class="project-card">
+        <a href="{{ .RelPermalink }}" class="project-card-image-wrap">
+          {{ if .Params.image }}
+          <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="project-card-image" loading="lazy">
+          {{ else }}
+          <div class="project-card-placeholder">
+            <span class="icon">{{ partial "icon.html" "sparkle" }}</span>
+          </div>
+          {{ end }}
+          <div class="project-card-badges">
+            {{ with .Params.category }}
+            <span class="project-badge project-badge--category">{{ . }}</span>
+            {{ end }}
+            {{ with .Params.location }}
+            <span class="project-badge project-badge--location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {{ . }}
+            </span>
+            {{ end }}
+          </div>
+        </a>
+        <div class="project-card-content">
+          <h2 class="project-card-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          <p class="project-card-excerpt">
+            {{ if .Description }}
+              {{ .Description }}
+            {{ else }}
+              {{ .Summary | plainify | truncate 130 }}
+            {{ end }}
+          </p>
+
+          {{ if or .Params.scope .Params.area }}
+          <div class="project-card-specs">
+            {{ with .Params.scope }}
+            <div class="project-spec-item">
+              <span class="spec-label">Scope:</span>
+              <span class="spec-val">{{ . }}</span>
+            </div>
+            {{ end }}
+            {{ with .Params.area }}
+            <div class="project-spec-item">
+              <span class="spec-label">Area:</span>
+              <span class="spec-val">{{ . }}</span>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+
+          <div class="project-card-footer">
+            <a href="{{ .RelPermalink }}" class="project-view-link">
+              View Case Study
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      {{ else }}
+      <div class="no-posts-state">
+        <p>No projects published yet. Check back soon!</p>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="subpage-cta-banner">
+      <div class="subpage-cta-text">
+        <h3>Ready to build your sports court, gym, or playground?</h3>
+        <p>Contact our project execution team for a free on-site consultation, 2D/3D layout, and turnkey proposal.</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ `Hi Gymscape, I reviewed your executed projects and want a quotation for my site.` | urlquery }}" target="_blank" rel="noopener">
+        <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+        <span>Discuss Your Project</span>
+      </a>
+    </div>
+  </div>
+</section>
+{{ end }}

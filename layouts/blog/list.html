@@ -1,0 +1,75 @@
+{{ define "main" }}
+<section class="subpage-hero">
+  <div class="wrap subpage-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ "/" | relURL }}">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span aria-current="page">Blog & Guides</span>
+    </nav>
+    <div class="subpage-badge">Knowledge Hub</div>
+    <h1 class="subpage-title">Sports, Fitness & Playground Insights</h1>
+    <p class="subpage-lead">Expert guides, court construction specifications, equipment buyer checklists, and maintenance tips from India's trusted sports engineers.</p>
+  </div>
+</section>
+
+<section class="section blog-list-section">
+  <div class="wrap">
+    <div class="posts-grid">
+      {{ range .Pages.ByDate.Reverse }}
+      <article class="post-card">
+        <a href="{{ .RelPermalink }}" class="post-card-image-wrap">
+          {{ if .Params.image }}
+          <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="post-card-image" loading="lazy">
+          {{ else }}
+          <div class="post-card-placeholder">
+            <span class="icon">{{ partial "icon.html" "sparkle" }}</span>
+          </div>
+          {{ end }}
+          {{ with .Params.category }}
+          <span class="post-category-badge">{{ . }}</span>
+          {{ end }}
+        </a>
+        <div class="post-card-content">
+          <div class="post-card-meta">
+            <span class="post-date">{{ .Date.Format "Jan 02, 2006" }}</span>
+            <span class="meta-dot">&middot;</span>
+            <span class="post-reading-time">{{ .ReadingTime }} min read</span>
+          </div>
+          <h2 class="post-card-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          <p class="post-card-excerpt">
+            {{ if .Description }}
+              {{ .Description }}
+            {{ else }}
+              {{ .Summary | plainify | truncate 130 }}
+            {{ end }}
+          </p>
+          <div class="post-card-footer">
+            <a href="{{ .RelPermalink }}" class="post-read-more">
+              Read Guide
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      {{ else }}
+      <div class="no-posts-state">
+        <p>No articles published yet. Check back soon!</p>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="subpage-cta-banner">
+      <div class="subpage-cta-text">
+        <h3>Have a question about court construction or gym setup?</h3>
+        <p>Talk directly with our senior sports engineers for free technical guidance and project quotes.</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ `Hi Gymscape, I read your blog and would like expert advice on my project.` | urlquery }}" target="_blank" rel="noopener">
+        <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+        <span>Get Expert Consultation</span>
+      </a>
+    </div>
+  </div>
+</section>
+{{ end }}

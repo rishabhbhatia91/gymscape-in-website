@@ -1,0 +1,150 @@
+{{ define "main" }}
+<article class="project-page" itemscope itemtype="https://schema.org/CreativeWork">
+  <section class="subpage-hero subpage-hero--project">
+    <div class="wrap subpage-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ "/" | relURL }}">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="{{ "projects/" | relURL }}">Projects</a>
+        <span class="breadcrumb-sep">/</span>
+        <span aria-current="page">{{ .Title }}</span>
+      </nav>
+
+      <div class="article-hero-meta">
+        {{ with .Params.category }}
+        <span class="project-badge project-badge--category">{{ . }}</span>
+        {{ end }}
+        {{ with .Params.location }}
+        <span class="project-badge project-badge--location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          {{ . }}
+        </span>
+        {{ end }}
+        {{ with .Params.year }}
+        <span class="project-badge project-badge--year">{{ . }}</span>
+        {{ end }}
+      </div>
+
+      <h1 class="subpage-title project-single-title" itemprop="name">{{ .Title }}</h1>
+
+      {{ with .Description }}
+      <p class="subpage-lead project-single-lead" itemprop="description">{{ . }}</p>
+      {{ end }}
+    </div>
+  </section>
+
+  {{ if .Params.image }}
+  <div class="wrap project-featured-image-wrap">
+    <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="project-featured-image" itemprop="image">
+  </div>
+  {{ end }}
+
+  <div class="wrap">
+    {{ if or .Params.client .Params.location .Params.area .Params.scope .Params.duration .Params.surface }}
+    <div class="project-meta-grid">
+      {{ with .Params.client }}
+      <div class="project-meta-box">
+        <span class="meta-label">Client / Venue</span>
+        <span class="meta-value">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.location }}
+      <div class="project-meta-box">
+        <span class="meta-label">Location</span>
+        <span class="meta-value">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.area }}
+      <div class="project-meta-box">
+        <span class="meta-label">Total Area</span>
+        <span class="meta-value">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.scope }}
+      <div class="project-meta-box">
+        <span class="meta-label">Scope of Work</span>
+        <span class="meta-value">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.surface }}
+      <div class="project-meta-box">
+        <span class="meta-label">Flooring / Surface</span>
+        <span class="meta-value">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.duration }}
+      <div class="project-meta-box">
+        <span class="meta-label">Execution Time</span>
+        <span class="meta-value">{{ . }}</span>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  <div class="wrap article-layout">
+    <div class="article-content-body" itemprop="text">
+      {{ .Content }}
+
+      {{ with .Params.testimonial }}
+      <blockquote class="project-testimonial-card">
+        <p class="testimonial-quote">"{{ .quote }}"</p>
+        <footer class="testimonial-author">
+          <strong>{{ .author }}</strong>
+          {{ with .role }}<span> &middot; {{ . }}</span>{{ end }}
+        </footer>
+      </blockquote>
+      {{ end }}
+
+      <div class="article-consult-box">
+        <div class="article-consult-icon">
+          <span class="icon">{{ partial "icon.html" "sparkle" }}</span>
+        </div>
+        <div class="article-consult-content">
+          <h3>Want a similar setup for your facility?</h3>
+          <p>Get a custom turnkey proposal including 2D/3D layouts, flooring samples, and transparent itemized pricing.</p>
+          <a class="btn btn-primary" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ (printf "Hi Gymscape, I am interested in a project similar to '%s'." .Title) | urlquery }}" target="_blank" rel="noopener">
+            <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+            <span>Request Quotation on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-sidebar">
+      <div class="article-sidebar-sticky">
+        <div class="sidebar-card sidebar-cta-card">
+          <div class="sidebar-badge">Turnkey Execution</div>
+          <h4>Have a sports or fitness project?</h4>
+          <p>We handle everything from sub-base civil inspection to final line marking, equipment setup, and lighting.</p>
+          <a class="btn btn-primary btn-block" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ `Hi Gymscape, I have an upcoming sports/gym project and want to discuss execution.` | urlquery }}" target="_blank" rel="noopener">
+            <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+            <span>Talk to Specialists</span>
+          </a>
+          <a class="btn btn-ghost btn-block" href="tel:+{{ .Site.Params.phoneE164 }}">
+            <span class="icon">{{ partial "icon.html" "phone" }}</span>
+            <span>Call {{ .Site.Params.phoneDisplay }}</span>
+          </a>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Explore Our Expertise</h4>
+          <ul class="sidebar-nav-list">
+            <li><a href="{{ "/" | relURL }}#sports">Pickleball & Sports Flooring &rarr;</a></li>
+            <li><a href="{{ "/" | relURL }}#fitness">Commercial Gym Equipment Setup &rarr;</a></li>
+            <li><a href="{{ "/" | relURL }}#playground">School & Society Swings &rarr;</a></li>
+            <li><a href="{{ "blog/" | relURL }}">Read Guides & Insights &rarr;</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap article-footer-nav">
+    <a href="{{ "projects/" | relURL }}" class="btn btn-ghost">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Back to all Projects</span>
+    </a>
+  </div>
+</article>
+{{ end }}

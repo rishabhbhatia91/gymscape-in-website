@@ -1,0 +1,112 @@
+backend:
+  name: github
+  repo: rishabhbhatia91/gymscape-in-website
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+# Enables local editing with 'npx decap-server' during local development
+local_backend: true
+
+media_folder: "static/images/uploads"
+public_folder: "images/uploads"
+
+display_url: "https://gymscape.in"
+logo_url: "/images/gymscape-logo-trimmed.jpg"
+
+collections:
+  # ============================================================
+  # Blog Collection
+  # ============================================================
+  - name: "blog"
+    label: "Blog Articles"
+    label_singular: "Blog Post"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    filter: { field: "category", pattern: ".*" }
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ" }
+      - { 
+          label: "Category", 
+          name: "category", 
+          widget: "select", 
+          options: [
+            "Sports Court Construction", 
+            "Commercial Gym Setup", 
+            "Playground & Safety", 
+            "Equipment Maintenance",
+            "Sports Insights"
+          ] 
+        }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Meta Description / Excerpt", name: "description", widget: "text" }
+      - { label: "SEO Keywords (comma-separated)", name: "keywords", widget: "string", required: false }
+      - { label: "Body Content", name: "body", widget: "markdown" }
+
+  # ============================================================
+  # Projects Collection
+  # ============================================================
+  - name: "projects"
+    label: "Executed Projects"
+    label_singular: "Project Case Study"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    filter: { field: "category", pattern: ".*" }
+    editor:
+      preview: true
+    fields:
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Date Completed", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ" }
+      - { 
+          label: "Category", 
+          name: "category", 
+          widget: "select", 
+          options: ["Sports Courts", "Commercial Gym", "Playgrounds", "Multi-Sport Arena"] 
+        }
+      - { label: "Location", name: "location", widget: "string", hint: "e.g. Lucknow, UP" }
+      - { label: "Year", name: "year", widget: "string", default: "2026" }
+      - { label: "Client / Organization", name: "client", widget: "string", required: false }
+      - { label: "Total Area / Footprint", name: "area", widget: "string", hint: "e.g. 8,500 sq.ft." }
+      - { label: "Scope of Work", name: "scope", widget: "string", hint: "e.g. 4 Courts, Fencing & LED Lighting" }
+      - { label: "Flooring / Surface Type", name: "surface", widget: "string", required: false }
+      - { label: "Execution Timeline", name: "duration", widget: "string", hint: "e.g. 14 Days" }
+      - { label: "Featured Project Photo", name: "image", widget: "image" }
+      - { label: "Summary / Meta Description", name: "description", widget: "text" }
+      - label: "Client Testimonial (Optional)"
+        name: "testimonial"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Quote", name: "quote", widget: "text" }
+          - { label: "Author Name", name: "author", widget: "string" }
+          - { label: "Author Role / Title", name: "role", widget: "string" }
+      - { label: "Case Study Details & Scope", name: "body", widget: "markdown" }
+
+  # ============================================================
+  # Site Data Files
+  # ============================================================
+  - name: "catalog"
+    label: "Product Catalog"
+    files:
+      - label: "Products List"
+        name: "products_data"
+        file: "data/products.yaml"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            fields:
+              - { label: "Product ID", name: "id", widget: "string" }
+              - { label: "Product Name", name: "name", widget: "string" }
+              - { label: "Category Name", name: "category", widget: "string" }
+              - { label: "Category ID", name: "categoryId", widget: "string" }
+              - { label: "Price (e.g. ₹22,990)", name: "price", widget: "string" }
+              - { label: "Product Image", name: "image", widget: "image" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Action Type", name: "actionType", widget: "select", options: ["flipkart", "whatsapp", "inquire"], default: "flipkart" }
+              - { label: "Buy URL (Flipkart / Link)", name: "flipkartUrl", widget: "string", required: false }

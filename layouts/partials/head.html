@@ -26,17 +26,18 @@
 <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
 <meta name="theme-color" content="#0a0a0a">
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Params.brandName }}">
-<meta property="og:title" content="{{ .Site.Title }}">
-<meta property="og:description" content="{{ .Site.Params.description }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Params.brandName }}{{ end }}">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
+{{ $ogImg := .Params.image | default .Site.Params.ogImage }}
+<meta property="og:image" content="{{ $ogImg | absURL }}">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ .Site.Title }}">
-<meta name="twitter:description" content="{{ .Site.Params.description }}">
-<meta name="twitter:image" content="{{ .Site.Params.ogImage | absURL }}">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Params.brandName }}{{ end }}">
+<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="twitter:image" content="{{ $ogImg | absURL }}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
