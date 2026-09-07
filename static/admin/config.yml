@@ -2,8 +2,6 @@ backend:
   name: github
   repo: rishabhbhatia91/gymscape-in-website
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
 # Enables local editing with 'npx decap-server' during local development
 local_backend: true
