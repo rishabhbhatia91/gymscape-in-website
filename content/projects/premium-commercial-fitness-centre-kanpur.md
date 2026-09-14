@@ -28,8 +28,8 @@ testimonial: null
 ADGS Lucknow partnered with us to upgrade their existing outdoor sports area into a modern, multi-sport athletic complex. The goal was to maximize their available footprint by accommodating basketball, tennis, badminton, and pickleball on a single high-durability surface while prioritizing student safety and long-term durability.
 
 # 
-SCOPE 
 
+# **SCOPE** 
 
 **Surface Repair & Sub-Base Preparation:** Corrected surface irregularities, repaired existing cracks, and re-leveled the sub-base to establish a flawless foundation.
 **13-Layer Acrylic Synthetic Cushioning:** Applied a premium 13-layer acrylic cushion court system to deliver superior shock absorption, consistent ball bounce, and reduced impact on young athletes' joints.
@@ -37,8 +37,6 @@ Custom Multi-Sport Line Marking: Precision-painted vibrant, color-coded boundary
 **Hardware & Fixtures Installation:** Supplied and installed heavy-duty basketball goal posts, fixed regulation pickleball posts, and flexible mobile badminton pole systems.
 **Perimeter Netting:** Enclosed the court perimeter using high-tensile Garware safety netting and custom fencing to keep play contained and secure.
 
-
 # RESULT 
-
 
 A vibrant, multi-purpose facility delivered on schedule, providing ADGS Lucknow with a professional-grade space engineered for daily institutional use and inter-school tournaments
