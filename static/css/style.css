@@ -1757,3 +1757,480 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .article-consult-box { flex-direction: column; }
   .subpage-cta-banner { padding: 24px; }
 }
+
+/* ============================================================
+   JustDial-Style Multi-Step Lead Funnel Modal & Calculator
+   ============================================================ */
+.pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  animation: pulseGreen 1.8s infinite;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+@keyframes pulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.header-quote-btn {
+  background: var(--paper-tint);
+  border-color: var(--line);
+  color: var(--ink);
+  font-size: 13.5px;
+  padding: 8px 16px;
+  transition: all .2s var(--ease);
+}
+.header-quote-btn:hover {
+  background: var(--orange-tint);
+  border-color: var(--orange);
+  color: var(--orange-dark);
+}
+@media (max-width: 768px) {
+  .header-quote-btn {
+    display: none;
+  }
+}
+
+/* Modal Backdrop */
+.lead-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.lead-modal-backdrop.is-visible {
+  display: flex;
+  opacity: 1;
+}
+
+/* Modal Dialog */
+.lead-modal-dialog {
+  background: #ffffff;
+  width: 100%;
+  max-width: 640px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  position: relative;
+  transform: translateY(20px) scale(0.97);
+  transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+.lead-modal-backdrop.is-visible .lead-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+/* Modal Header */
+.lead-modal-header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: linear-gradient(180deg, var(--paper-tint) 0%, #ffffff 100%);
+}
+.lead-modal-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange-dark);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.lead-modal-title {
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--ink);
+  font-weight: 800;
+}
+.lead-modal-close {
+  background: rgba(0, 0, 0, 0.05);
+  border: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+.lead-modal-close:hover {
+  background: var(--orange-tint);
+  color: var(--orange-dark);
+}
+
+/* Progress Wrap */
+.lead-progress-wrap {
+  background: var(--paper-tint);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.lead-progress-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--orange) 0%, #25d366 100%);
+  transition: width .3s ease;
+}
+.lead-steps-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 24px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.lead-step-indicator.is-active {
+  color: var(--orange-dark);
+}
+
+/* Form Body */
+.lead-funnel-form {
+  padding: 24px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.lead-step-pane {
+  display: none;
+  animation: leadFadeIn .25s ease;
+}
+.lead-step-pane.is-active {
+  display: block;
+}
+@keyframes leadFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lead-step-heading {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.lead-step-sub {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+  line-height: 1.45;
+}
+
+/* Category Grid (Step 1) */
+.lead-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.lead-cat-option {
+  position: relative;
+  cursor: pointer;
+}
+.lead-cat-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.lead-cat-box {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  transition: all .18s var(--ease);
+}
+.lead-cat-icon {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+.lead-cat-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.lead-cat-hint {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.lead-cat-option input[type="radio"]:checked + .lead-cat-box {
+  border-color: var(--orange);
+  background: var(--orange-tint);
+  box-shadow: 0 4px 12px rgba(238, 91, 49, 0.12);
+}
+.lead-cat-option input[type="radio"]:checked + .lead-cat-box .lead-cat-name {
+  color: var(--orange-dark);
+}
+
+/* Chips Grid (Step 2) */
+.lead-field-group {
+  margin-bottom: 20px;
+}
+.lead-field-label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.lead-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.lead-chip {
+  cursor: pointer;
+}
+.lead-chip input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.lead-chip span {
+  display: inline-block;
+  padding: 8px 14px;
+  background: var(--paper-tint);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  transition: all .15s ease;
+}
+.lead-chip:hover span {
+  border-color: var(--orange);
+  color: var(--ink);
+}
+.lead-chip input[type="radio"]:checked + span {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #ffffff;
+}
+
+/* Step 3: Contact & Input fields */
+.lead-summary-badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 14px;
+  background: var(--paper-tint);
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  border: 1px dashed var(--line);
+}
+.lead-summary-pill {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  background: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+.lead-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.lead-input-group--full {
+  grid-column: 1 / -1;
+}
+.lead-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--ink);
+  background: #ffffff;
+  transition: border-color .15s ease;
+}
+.lead-input:focus {
+  outline: 0;
+  border-color: var(--orange);
+}
+.lead-phone-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  overflow: hidden;
+}
+.lead-phone-wrap:focus-within {
+  border-color: var(--orange);
+}
+.lead-phone-prefix {
+  padding: 12px 14px;
+  background: var(--paper-tint);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink-soft);
+  border-right: 1px solid var(--line);
+}
+.lead-input--phone {
+  border: 0;
+  border-radius: 0;
+}
+.lead-field-hint {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+.req { color: var(--orange-dark); }
+
+/* Navigation buttons inside modal */
+.lead-step-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  gap: 12px;
+}
+.lead-btn-submit {
+  background: #25d366;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 12px 24px;
+}
+.lead-btn-submit:hover {
+  background: #20ba5a;
+  transform: translateY(-1px);
+}
+
+/* Success Box */
+.lead-success-box {
+  text-align: center;
+  padding: 24px 12px;
+}
+.lead-success-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+.lead-success-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.lead-success-desc {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  max-width: 440px;
+  margin: 0 auto 20px;
+  line-height: 1.5;
+}
+.lead-showroom-callout {
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--paper-tint);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin: 16px auto;
+  max-width: 440px;
+  line-height: 1.45;
+}
+
+/* ============================================================
+   Sticky Floating Action Trigger (JustDial / IndiaMART style)
+   ============================================================ */
+.lead-floating-trigger {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 998;
+}
+.lead-float-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: var(--dark);
+  color: #ffffff;
+  border: 1.5px solid var(--orange);
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all .2s var(--ease);
+}
+.lead-float-btn:hover {
+  background: var(--orange-dark);
+  border-color: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(238, 91, 49, 0.35);
+}
+.lead-float-badge {
+  background: var(--orange);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: .04em;
+}
+.lead-float-text {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.lead-float-arrow {
+  font-size: 16px;
+  color: var(--orange);
+  transition: transform .2s ease;
+}
+.lead-float-btn:hover .lead-float-arrow {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+@media (max-width: 600px) {
+  .lead-modal-dialog {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    max-height: 94vh;
+    margin-top: auto;
+  }
+  .lead-cat-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .lead-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .lead-floating-trigger {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+  .lead-float-btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 18px;
+  }
+}
+

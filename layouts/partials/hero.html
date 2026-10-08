@@ -23,10 +23,9 @@
     </div>
 
     <div class="hero-cta">
-      <a class="btn btn-primary btn-lg" href="https://wa.me/{{ .Site.Params.whatsappNumber }}?text={{ "Hi Gymscape, I'd like to know more about your products." | urlquery }}" target="_blank" rel="noopener">
-        <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
-        Chat on WhatsApp
-      </a>
+      <button type="button" class="btn btn-primary btn-lg js-open-quote-modal" aria-label="Calculate Instant Price">
+        <span>⚡ Calculate Instant Price &amp; Quote</span>
+      </button>
       <a class="btn btn-outline btn-lg" href="#catalogue">
         Browse the catalogue
         <span class="icon">{{ partial "icon.html" "arrow" }}</span>

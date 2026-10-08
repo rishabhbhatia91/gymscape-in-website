@@ -1,0 +1,232 @@
+{{ $waNumber := .Site.Params.whatsappNumber }}
+<div class="lead-modal-backdrop" id="leadModalBackdrop" aria-hidden="true">
+  <div class="lead-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    
+    <!-- Modal Header -->
+    <div class="lead-modal-header">
+      <div class="lead-modal-header-text">
+        <span class="lead-modal-kicker">
+          <span class="pulse-dot"></span> Direct Factory Rates &middot; Instant Estimate
+        </span>
+        <h3 class="lead-modal-title" id="leadModalTitle">Get Instant Quote &amp; Best Price</h3>
+      </div>
+      <button class="lead-modal-close" id="leadModalCloseBtn" aria-label="Close quote calculator">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Progress Indicator Bar -->
+    <div class="lead-progress-wrap">
+      <div class="lead-progress-bar" id="leadProgressBar" style="width: 33%;"></div>
+      <div class="lead-steps-label">
+        <span class="lead-step-indicator is-active" data-step="1">1. Requirement</span>
+        <span class="lead-step-indicator" data-step="2">2. Specifications</span>
+        <span class="lead-step-indicator" data-step="3">3. Contact &amp; Quote</span>
+      </div>
+    </div>
+
+    <!-- Modal Form Body -->
+    <form class="lead-funnel-form" id="leadFunnelForm" onsubmit="return false;">
+      
+      <!-- ==========================================
+           STEP 1: SELECT CATEGORY / SERVICE
+           ========================================== -->
+      <div class="lead-step-pane is-active" id="leadStep1">
+        <h4 class="lead-step-heading">What are you looking to setup or buy?</h4>
+        <p class="lead-step-sub">Select a category to view specialized sizing and quotation options.</p>
+
+        <div class="lead-cat-grid">
+          <label class="lead-cat-option">
+            <input type="radio" name="service_category" value="Pickleball & Sports Courts" checked>
+            <div class="lead-cat-box">
+              <span class="lead-cat-icon">🎾</span>
+              <span class="lead-cat-name">Pickleball &amp; Sports Courts</span>
+              <span class="lead-cat-hint">Acrylic &amp; PP Tile Courts</span>
+            </div>
+          </label>
+
+          <label class="lead-cat-option">
+            <input type="radio" name="service_category" value="Commercial Gym Setup">
+            <div class="lead-cat-box">
+              <span class="lead-cat-icon">🏋️</span>
+              <span class="lead-cat-name">Commercial Gym Setup</span>
+              <span class="lead-cat-hint">Full Fit-Out &amp; Machines</span>
+            </div>
+          </label>
+
+          <label class="lead-cat-option">
+            <input type="radio" name="service_category" value="Treadmills & Cardio Equipment">
+            <div class="lead-cat-box">
+              <span class="lead-cat-icon">🏃</span>
+              <span class="lead-cat-name">Treadmills &amp; Cardio</span>
+              <span class="lead-cat-hint">Commercial AC &amp; Home</span>
+            </div>
+          </label>
+
+          <label class="lead-cat-option">
+            <input type="radio" name="service_category" value="Playground & Swings">
+            <div class="lead-cat-box">
+              <span class="lead-cat-icon">🛝</span>
+              <span class="lead-cat-name">Playgrounds &amp; Swings</span>
+              <span class="lead-cat-hint">Multiplay &amp; Open Gym</span>
+            </div>
+          </label>
+
+          <label class="lead-cat-option">
+            <input type="radio" name="service_category" value="Sports Tables (TT / Snooker / Pool)">
+            <div class="lead-cat-box">
+              <span class="lead-cat-icon">🎱</span>
+              <span class="lead-cat-name">Sports Tables</span>
+              <span class="lead-cat-hint">TT, Snooker, Pool, Foosball</span>
+            </div>
+          </label>
+
+          <label class="lead-cat-option">
+            <input type="radio" name="service_category" value="Sports & Gym Flooring">
+            <div class="lead-cat-box">
+              <span class="lead-cat-icon">🧱</span>
+              <span class="lead-cat-name">Rubber &amp; Sports Flooring</span>
+              <span class="lead-cat-hint">Rubber Tiles &amp; EPDM</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="lead-step-nav">
+          <div></div>
+          <button type="button" class="btn btn-primary lead-btn-next" id="step1NextBtn">
+            Next: Specifications <span class="icon">{{ partial "icon.html" "arrow" }}</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           STEP 2: PROJECT SPECS & TIMELINE
+           ========================================== -->
+      <div class="lead-step-pane" id="leadStep2">
+        <h4 class="lead-step-heading">Specify your project details &amp; scale</h4>
+        <p class="lead-step-sub">Helps our engineering team calculate exact material and equipment estimates.</p>
+
+        <!-- Dynamic Question: Space / Quantity / Scope -->
+        <div class="lead-field-group">
+          <label class="lead-field-label" id="leadDynamicLabel1">Scale / Size / Quantity:</label>
+          <div class="lead-chips-grid" id="leadChipsContainer1">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+
+        <!-- Dynamic Question: Type / Surface / Requirement -->
+        <div class="lead-field-group">
+          <label class="lead-field-label" id="leadDynamicLabel2">Surface / Requirement Type:</label>
+          <div class="lead-chips-grid" id="leadChipsContainer2">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+
+        <!-- Deployment Timeline -->
+        <div class="lead-field-group">
+          <label class="lead-field-label">When are you planning to start / buy?</label>
+          <div class="lead-chips-grid">
+            <label class="lead-chip">
+              <input type="radio" name="timeline" value="Immediately (Within 7-10 Days)" checked>
+              <span>Immediately</span>
+            </label>
+            <label class="lead-chip">
+              <input type="radio" name="timeline" value="Within 1 Month">
+              <span>Within 1 Month</span>
+            </label>
+            <label class="lead-chip">
+              <input type="radio" name="timeline" value="Within 2-3 Months">
+              <span>Within 2-3 Months</span>
+            </label>
+            <label class="lead-chip">
+              <input type="radio" name="timeline" value="Just Exploring Budget">
+              <span>Just Exploring Budget</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="lead-step-nav">
+          <button type="button" class="btn btn-ghost lead-btn-prev" id="step2PrevBtn">&larr; Back</button>
+          <button type="button" class="btn btn-primary lead-btn-next" id="step2NextBtn">
+            Next: Final Quote <span class="icon">{{ partial "icon.html" "arrow" }}</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           STEP 3: CONTACT & INSTANT QUOTE GENERATOR
+           ========================================== -->
+      <div class="lead-step-pane" id="leadStep3">
+        <h4 class="lead-step-heading">Where should we share your instant estimate?</h4>
+        <p class="lead-step-sub">We will generate an itemized quote summary and connect you with our project lead on WhatsApp.</p>
+
+        <div class="lead-summary-badge" id="leadSummaryPreview">
+          <!-- Summary chips inserted here -->
+        </div>
+
+        <div class="lead-form-grid">
+          <div class="lead-input-group">
+            <label for="leadCity" class="lead-field-label">Your City / Location: <span class="req">*</span></label>
+            <input type="text" id="leadCity" name="city" class="lead-input" placeholder="e.g. Lucknow, Kanpur, Delhi NCR" required value="Lucknow">
+          </div>
+
+          <div class="lead-input-group">
+            <label for="leadName" class="lead-field-label">Your Name: <span class="req">*</span></label>
+            <input type="text" id="leadName" name="name" class="lead-input" placeholder="e.g. Rajesh Sharma" required>
+          </div>
+
+          <div class="lead-input-group lead-input-group--full">
+            <label for="leadPhone" class="lead-field-label">WhatsApp Mobile Number: <span class="req">*</span></label>
+            <div class="lead-phone-wrap">
+              <span class="lead-phone-prefix">+91</span>
+              <input type="tel" id="leadPhone" name="phone" class="lead-input lead-input--phone" placeholder="98765 43210" pattern="[0-9]{10}" maxlength="10" required>
+            </div>
+            <p class="lead-field-hint">🔒 No spam. Instant direct quotation and product catalog sent on WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="lead-step-nav">
+          <button type="button" class="btn btn-ghost lead-btn-prev" id="step3PrevBtn">&larr; Back</button>
+          <button type="button" class="btn btn-primary lead-btn-submit" id="leadSubmitBtn">
+            <span class="icon">{{ partial "icon.html" "whatsapp" }}</span>
+            <span>Get Instant Quote on WhatsApp</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           CONFIRMATION SUCCESS STATE
+           ========================================== -->
+      <div class="lead-step-pane" id="leadStepSuccess">
+        <div class="lead-success-box">
+          <div class="lead-success-icon">✅</div>
+          <h4 class="lead-success-title">Quote Request Generated!</h4>
+          <p class="lead-success-desc">
+            Your quotation details have been prepared. Click below if WhatsApp did not open automatically:
+          </p>
+          
+          <a href="#" id="leadDirectWaLink" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" style="margin-bottom: 14px;">
+            <span class="icon">{{ partial "icon.html" "whatsapp" }}</span> Open WhatsApp Chat Now
+          </a>
+          
+          <p class="lead-showroom-callout">
+            📍 <strong>Prefer in-person consultation?</strong><br>
+            Visit our <strong>Lalbagh Outlet</strong> or <strong>Old Outlet (Est. 1982)</strong> in Lucknow.
+          </p>
+
+          <button type="button" class="btn btn-ghost btn-sm" id="leadSuccessCloseBtn" style="margin-top: 10px;">Close Window</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- Sticky Floating Quote Button for Mobile & Desktop -->
+<aside class="lead-floating-trigger" id="leadFloatingTrigger" aria-label="Instant quotation trigger">
+  <button class="lead-float-btn" id="openLeadModalBtn" aria-haspopup="dialog">
+    <span class="lead-float-badge">⚡ INSTANT PRICE</span>
+    <span class="lead-float-text">Get Quotation &amp; Best Price</span>
+    <span class="lead-float-arrow">&rarr;</span>
+  </button>
+</aside>
