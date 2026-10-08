@@ -27,9 +27,10 @@ For a 1,500 to 4,000 sq.ft. commercial gym, optimal member flow requires dividin
 ## 2. Essential Equipment Checklist
 
 ### A. Heavy-Duty Commercial Cardio
-* **Motorized Commercial Treadmills:** 4.0 HP to 6.0 HP AC continuous-duty motors with auto-incline and shock-cushioned running decks (e.g. 4 to 6 units for a 2,000 sq.ft. gym).
+* **Motorized Commercial Treadmills:** 4.0 HP to 6.0 HP AC continuous-duty motors with auto-incline and shock-cushioned running decks (e.g. 4 to 6 units for a 2,000 sq.ft. gym). Read our engineering guide on [How to Choose an AC vs DC Treadmill](/blog/how-to-choose-a-treadmill-ac-vs-dc-motor-manual-guide/).
 * **Commercial Cross Trainers (Ellipticals):** Self-powered or electro-magnetic resistance.
 * **Spinning Bikes & Air Bikes:** Heavy flywheel (18–22 kg) for high-intensity interval training.
+* **For a complete itemized checklist:** Explore our [Complete Gym Equipment List for a New Gym](/blog/complete-gym-equipment-list-for-new-commercial-gym/).
 
 ### B. Selectorized & Plate-Loaded Strength Machines
 * Dual Adjustable Pulley / Functional Trainer (8-stack or cable crossover).

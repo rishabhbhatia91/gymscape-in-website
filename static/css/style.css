@@ -1751,12 +1751,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     position: static;
   }
 }
-
 @media (max-width: 600px) {
   .subpage-hero { padding: 110px 0 40px; }
   .posts-grid, .projects-grid { grid-template-columns: 1fr; }
   .article-consult-box { flex-direction: column; }
   .subpage-cta-banner { padding: 24px; }
 }
-
-
