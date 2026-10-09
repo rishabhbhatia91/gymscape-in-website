@@ -1,10 +1,10 @@
 ---
-title: "The Complete Guide to Pickleball Court Construction in India (Cost, Dimensions & Flooring)"
+title: 'Pickleball Court Construction Cost in India: Complete Guide | Gymscape'
 date: 2026-03-01T10:00:00+05:30
-category: "Sports Court Construction"
-description: "Everything you need to know about building a pickleball court in India: official dimensions, sub-base civil requirements, 8-layer acrylic cushioned vs. PP interlocking tile flooring, floodlighting, and turnkey costs."
-image: "images/categories/sports-goods.jpg"
-keywords: "pickleball court construction India, pickleball court cost India, pickleball court flooring Lucknow, acrylic court contractors, turnkey sports court"
+category: Sports Court Construction
+image: images/categories/sports-goods.jpg
+description: Plan your pickleball court with a guide to construction costs, dimensions, flooring, fencing, lighting and installation. Explore project requirements and request a quotation from Gymscape.
+keywords: pickleball court construction, pickleball court builders, bhatia sports, pickleball flooring cost, pickleball court build, cost to build pickleball court, pickleball court cost, pickleball court construction cost, pickleball court construction cost india
 ---
 
 Pickleball is officially the fastest-growing racquet sport in India. From gated residential societies in Lucknow, Noida, and Bengaluru to sports clubs, resorts, and schools across Uttar Pradesh, developers and sports enthusiasts are converting unused spaces into high-yield pickleball courts.
